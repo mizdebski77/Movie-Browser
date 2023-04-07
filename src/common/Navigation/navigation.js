@@ -6,7 +6,7 @@ export const Navigation = () => {
     return (
         <Wrapper>
             <ElementsWrapper>
-                <LogoWrapper>
+                <LogoWrapper to="/">
                     <LogoText>Movies Browser</LogoText>
                     <LogoImage src={logoImage} alt='Logo' />
                 </LogoWrapper>
