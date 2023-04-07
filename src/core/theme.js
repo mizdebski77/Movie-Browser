@@ -4,6 +4,8 @@ export const theme = {
         secondColor: "rgb(24, 24, 27)",
         fontPrimary: "#e3a207",
         fontSecondary: "#ffff",
+        inputColor: "rgb(126, 131, 154)",
+
 
     },
     breakPoint: {

@@ -1,11 +1,9 @@
 import { Link, NavLink } from "react-router-dom";
 import styled from "styled-components";
 
-export const Wrapper = styled.main`
+export const Wrapper = styled.nav`
     background: ${({ theme }) => theme.color.secondColor};
     padding: 20px;
-    display: grid;
-    grid-template-columns: 2fr 1fr;
     position: sticky;
     top: 0;
     z-index: 10;
@@ -14,7 +12,8 @@ export const Wrapper = styled.main`
 export const ElementsWrapper = styled.section`
     display: flex;
     justify-content: space-around;
-    margin: 0 80px 0 0 ;
+    margin: 0 auto;
+    width: 100%;
 `;
 
 export const LogoWrapper = styled(Link)`
