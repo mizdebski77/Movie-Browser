@@ -18,7 +18,6 @@ export const ElementsWrapper = styled.section`
         flex-direction: column;
         gap: 20px;
         margin: 0;
-
     }
 `;
 
