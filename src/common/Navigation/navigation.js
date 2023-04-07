@@ -1,5 +1,5 @@
 import React from 'react';
-import { ElementsWrapper, LogoImage, LogoText, LogoWrapper, Wrapper } from './styledNavigation';
+import { ElementsWrapper, Links, LinksWrapper, LogoImage, LogoText, LogoWrapper, Wrapper } from './styledNavigation';
 import logoImage from '../Images/camera.svg'
 export const Navigation = () => {
     return (
@@ -9,6 +9,11 @@ export const Navigation = () => {
                     <LogoText>Movies Browser</LogoText>
                     <LogoImage src={logoImage} alt='Logo' />
                 </LogoWrapper>
+                <LinksWrapper>
+                    <Links exact to="/">Movies</Links>
+                    <Links to="/people">People</Links>
+
+                </LinksWrapper>
             </ElementsWrapper>
         </Wrapper>
     );

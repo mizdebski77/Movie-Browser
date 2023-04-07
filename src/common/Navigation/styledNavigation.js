@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import styled from "styled-components";
 
 export const Wrapper = styled.main`
@@ -33,4 +33,27 @@ export const LogoText = styled.div`
 export const LogoImage = styled.img`
     width: 40px;
     color: white;
+`;
+
+export const LinksWrapper = styled.section`
+    width: 200px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    text-align: center;
+    gap: 20px;
+    align-items: center;
+`;
+
+const activeLink = "active";
+
+export const Links = styled(NavLink)`
+    color: ${({ theme }) => theme.color.fontSecondary};
+    text-decoration: none;
+    font-size: 20px;
+
+    &.${activeLink} {
+        color: ${({ theme }) => theme.color.fontPrimary};
+        border-bottom: 1px solid ${({ theme }) => theme.color.fontPrimary};
+        border-radius: 100px;
+    }
 `;
