@@ -1,8 +1,11 @@
+import { HashRouter } from "react-router-dom";
+import { Navigation } from "../common/Navigation/navigation";
+
 function App() {
   return (
-    <div>
-
-    </div>
+    <HashRouter>
+      <Navigation />
+    </HashRouter>
   );
 }
 
