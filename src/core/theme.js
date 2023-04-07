@@ -9,6 +9,7 @@ export const theme = {
 
     },
     breakPoint: {
+        firstBreakPoint: 1150,
     },
 }
 

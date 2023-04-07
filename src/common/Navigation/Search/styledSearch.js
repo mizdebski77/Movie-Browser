@@ -7,16 +7,21 @@ export const Wrapper = styled.section`
     display: grid;
     grid-template-columns: auto 1fr;
     border-radius: 20px;
+
+    @media (max-width:${({ theme }) => theme.breakPoint.firstBreakPoint}px){
+        width: 100%;
+    }
 `;
 
 export const Input = styled.input`
-    padding: 12px 12px 12px 0;
     border-radius: 20px;
     color: ${({theme}) => theme.color.inputColor};
     border: none;
     outline: none;
     width: 100%;
     background: ${({theme}) => theme.color.mainColor};
+
+
 `;
 
 export const Image = styled(SVG)`
