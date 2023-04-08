@@ -2,8 +2,12 @@ import React from 'react';
 import { CardImage, Genre, GenreWrapper, MovieCardWrapper, MovieTitle, MovieYear, Raiting, Star, Wrapper } from './styledMovieCard';
 import poster from '../../../common/Images/poster.jpg'
 import star from '../../../common/Images/star.svg';
+import { getPopularMovies } from './FetchPopularMovies/API';
 
 export const MovieCard = () => {
+
+    console.log(getPopularMovies());
+
     return (
         <Wrapper>
             <MovieCardWrapper to="xd">

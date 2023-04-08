@@ -26,7 +26,6 @@ export const MovieCardWrapper = styled(Link)`
 `;
 
 export const CardImage = styled.img`
-    height: 100%;
     width: 100%;
     box-shadow: 0 0 10px white;
     border-radius: 10px;
