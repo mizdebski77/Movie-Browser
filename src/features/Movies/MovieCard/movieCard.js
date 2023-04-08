@@ -21,6 +21,120 @@ export const MovieCard = () => {
                     7.3 / 10
                 </Raiting>
             </MovieCardWrapper>
+
+            <MovieCardWrapper to="xd">
+                <CardImage src={poster} />
+                <MovieTitle>Black Panther: Wakanda Forever</MovieTitle>
+                <MovieYear> 2022</MovieYear>
+                <GenreWrapper>
+                    <Genre>Action</Genre>
+                    <Genre>Adventure</Genre>
+                    <Genre>Drama</Genre>
+                    <Genre>Science Fiction </Genre>
+                </GenreWrapper>
+                <Raiting>
+                    <Star src = {star}/>
+                    7.3 / 10
+                </Raiting>
+            </MovieCardWrapper>
+
+            <MovieCardWrapper to="xd">
+                <CardImage src={poster} />
+                <MovieTitle>Black Panther: Wakanda Forever</MovieTitle>
+                <MovieYear> 2022</MovieYear>
+                <GenreWrapper>
+                    <Genre>Action</Genre>
+                    <Genre>Adventure</Genre>
+                    <Genre>Drama</Genre>
+                    <Genre>Science Fiction </Genre>
+                </GenreWrapper>
+                <Raiting>
+                    <Star src = {star}/>
+                    7.3 / 10
+                </Raiting>
+            </MovieCardWrapper>
+
+            <MovieCardWrapper to="xd">
+                <CardImage src={poster} />
+                <MovieTitle>Black Panther: Wakanda Forever</MovieTitle>
+                <MovieYear> 2022</MovieYear>
+                <GenreWrapper>
+                    <Genre>Action</Genre>
+                    <Genre>Adventure</Genre>
+                    <Genre>Drama</Genre>
+                    <Genre>Science Fiction </Genre>
+                </GenreWrapper>
+                <Raiting>
+                    <Star src = {star}/>
+                    7.3 / 10
+                </Raiting>
+            </MovieCardWrapper>
+
+            <MovieCardWrapper to="xd">
+                <CardImage src={poster} />
+                <MovieTitle>Black Panther: Wakanda Forever</MovieTitle>
+                <MovieYear> 2022</MovieYear>
+                <GenreWrapper>
+                    <Genre>Action</Genre>
+                    <Genre>Adventure</Genre>
+                    <Genre>Drama</Genre>
+                    <Genre>Science Fiction </Genre>
+                </GenreWrapper>
+                <Raiting>
+                    <Star src = {star}/>
+                    7.3 / 10
+                </Raiting>
+            </MovieCardWrapper>
+
+            <MovieCardWrapper to="xd">
+                <CardImage src={poster} />
+                <MovieTitle>Black Panther: Wakanda Forever</MovieTitle>
+                <MovieYear> 2022</MovieYear>
+                <GenreWrapper>
+                    <Genre>Action</Genre>
+                    <Genre>Adventure</Genre>
+                    <Genre>Drama</Genre>
+                    <Genre>Science Fiction </Genre>
+                </GenreWrapper>
+                <Raiting>
+                    <Star src = {star}/>
+                    7.3 / 10
+                </Raiting>
+            </MovieCardWrapper>
+
+            <MovieCardWrapper to="xd">
+                <CardImage src={poster} />
+                <MovieTitle>Black Panther: Wakanda Forever</MovieTitle>
+                <MovieYear> 2022</MovieYear>
+                <GenreWrapper>
+                    <Genre>Action</Genre>
+                    <Genre>Adventure</Genre>
+                    <Genre>Drama</Genre>
+                    <Genre>Science Fiction </Genre>
+                </GenreWrapper>
+                <Raiting>
+                    <Star src = {star}/>
+                    7.3 / 10
+                </Raiting>
+            </MovieCardWrapper>
+
+            <MovieCardWrapper to="xd">
+                <CardImage src={poster} />
+                <MovieTitle>Black Panther: Wakanda Forever</MovieTitle>
+                <MovieYear> 2022</MovieYear>
+                <GenreWrapper>
+                    <Genre>Action</Genre>
+                    <Genre>Adventure</Genre>
+                    <Genre>Drama</Genre>
+                    <Genre>Science Fiction </Genre>
+                </GenreWrapper>
+                <Raiting>
+                    <Star src = {star}/>
+                    7.3 / 10
+                </Raiting>
+            </MovieCardWrapper>
+
+
         </Wrapper>
     );
 };

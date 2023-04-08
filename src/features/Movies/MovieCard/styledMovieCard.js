@@ -6,13 +6,12 @@ import SVG from "react-inlinesvg";
 export const Wrapper = styled.main`
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 32px;
+    gap: 28px;
 `;
 
 export const MovieCardWrapper = styled(Link)`
     text-decoration: none;
     width: 100%;
-    height: 100%;
     background: ${({ theme }) => theme.color.secondColor};
     display: grid;
     padding: 16px;
@@ -36,7 +35,7 @@ export const CardImage = styled.img`
 export const MovieTitle = styled.h2`
     color: ${({theme}) => theme.color.fontPrimary};
     text-align: center;
-    font-size: 24px;
+    font-size: 20px;
     margin: 16px 0 0 0;
     font-weight: normal;
 `;
@@ -65,7 +64,7 @@ export const Raiting = styled.h3`
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    font-size: 20px;
+    font-size: 16px;
     margin: 20px 0 0 0;
     color: ${({theme}) => theme.color.fontSecondary};
     font-weight: normal;
