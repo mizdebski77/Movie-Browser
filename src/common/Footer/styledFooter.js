@@ -6,11 +6,7 @@ export const Wrapper = styled.footer`
     display: flex;
     align-items: center;
     justify-content: space-between;
-    bottom: 0;
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    
+    margin-top: 32px ;
     @media (max-width:${({ theme }) => theme.breakPoint.mobileMax}px){
         flex-direction: column ;
         gap: 16px;
