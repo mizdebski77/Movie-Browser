@@ -32,7 +32,7 @@ export const CardImage = styled.img`
 `;
 
 export const MovieTitle = styled.h2`
-    color: ${({theme}) => theme.color.fontPrimary};
+    color: ${({ theme }) => theme.color.fontPrimary};
     text-align: center;
     font-size: 20px;
     margin: 16px 0 0 0;
@@ -40,6 +40,7 @@ export const MovieTitle = styled.h2`
 `;
 
 export const MovieYear = styled.div`
+    margin: 20px 0 10px 0;
     color:${({ theme }) => theme.color.fontSecondary};
 `;
 
@@ -56,7 +57,7 @@ export const Genre = styled.div`
     background: ${({ theme }) => theme.color.fontPrimary};
     padding: 10px;
     border-radius: 10px;
-    color: ${({theme}) => theme.color.fontSecondary};
+    color: ${({ theme }) => theme.color.fontSecondary};
 `;
 
 export const Raiting = styled.h3`
@@ -65,7 +66,7 @@ export const Raiting = styled.h3`
     align-items: center;
     font-size: 16px;
     margin: 20px 0 0 0;
-    color: ${({theme}) => theme.color.fontSecondary};
+    color: ${({ theme }) => theme.color.fontSecondary};
     font-weight: normal;
 `;
 
