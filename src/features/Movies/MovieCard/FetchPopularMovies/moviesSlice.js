@@ -9,7 +9,7 @@ const moviesSlice = createSlice({
     },
 
     reducers: {
-        fetchMovies: (state, ) => {
+        fetchMovies: (state,) => {
             state.status = "loading";
         },
 
@@ -22,15 +22,31 @@ const moviesSlice = createSlice({
             state.status = "error";
         },
 
+        nextPage: (state) => {
+            state.pageNumber += 1;
+        },
+
+        prevPage: (state) => {
+            state.pageNumber -= 1;
+        },
+
+        firstPage: (state) => {
+            state.pageNumber = 1;
+        },
+
+        lastPage: (state) => {
+            state.pageNumber = state.movies.total_pages
+        },
+
     }
 });
 
-export const { fetchMovies, fetchMoviesError, fetchMoviesSuccess, currentPage } = moviesSlice.actions;
+export const { lastPage, firstPage, prevPage, nextPage, fetchMovies, fetchMoviesError, fetchMoviesSuccess, currentPage } = moviesSlice.actions;
 export const selectMoviesState = state => state.movies;
 
 export const selectMovies = state => selectMoviesState(state).movies;
 export const selectStatus = state => selectMoviesState(state).status;
-export const selectPage = state => selectMoviesState(state).movies.page;
+export const selectPage = state => selectMoviesState(state).pageNumber;
 export const selectTotalPages = state => selectMoviesState(state).movies.total_pages;
 
 export default moviesSlice.reducer;

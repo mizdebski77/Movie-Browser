@@ -28,6 +28,13 @@ export const Button = styled.button`
         transform: scale(1.05);
         background: ${({theme}) => lighten(0.1, theme.color.fontPrimary)};
     }
+    
+    &:disabled {
+        filter: opacity(0.7);
+        background: ${({theme}) => theme.color.fontPrimary};
+        cursor: no-drop;
+        transform: none;
+    }
 `;
 
 export const Page = styled.h3`
