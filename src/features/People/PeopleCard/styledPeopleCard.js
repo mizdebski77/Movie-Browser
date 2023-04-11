@@ -6,6 +6,17 @@ export const Wrapper = styled.main`
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     gap: 28px;
+    padding: 10px;
+
+    @media (max-width:${({ theme }) => theme.breakPoint.firstBreakPoint}px){
+        grid-template-columns: repeat(3, 1fr);
+        gap: 16px;
+    }
+
+    @media (max-width:${({ theme }) => theme.breakPoint.mobileMax}px){
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+    }
 `;
 
 export const PersonCard = styled(Link)`
@@ -36,4 +47,8 @@ export const Name = styled.h2`
     font-size: 20px;
     margin: 16px 0 0 0;
     font-weight: normal;
+    
+    @media (max-width:${({ theme }) => theme.breakPoint.mobileMax}px){
+        font-size: 16px;
+    }
 `;

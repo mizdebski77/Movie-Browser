@@ -11,10 +11,12 @@ export const Wrapper = styled.main`
 
     @media (max-width:${({ theme }) => theme.breakPoint.firstBreakPoint}px){
         grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
     }
 
     @media (max-width:${({ theme }) => theme.breakPoint.mobileMax}px){
         grid-template-columns: none;
+        gap: 16px;
     }
 `;
 
@@ -51,7 +53,6 @@ export const CardImage = styled.img`
     @media (max-width:${({ theme }) => theme.breakPoint.mobileMax}px){
         width: 40%;
     }
-
 `;
 
 export const MovieTitle = styled.h2`
