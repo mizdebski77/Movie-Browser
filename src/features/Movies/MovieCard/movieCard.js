@@ -33,7 +33,7 @@ export const MovieCard = () => {
                             <MovieYear> {new Date(movies.results[0].release_date).getFullYear()}</MovieYear>
                             <GenreWrapper>
                                 {movie.genre_ids.map((genre) => (
-                                    <Genre>{genre}</Genre>
+                                    <Genre key={genre}>{genre}</Genre>
                                 ))};
                             </GenreWrapper>
                             <Raiting>
@@ -45,6 +45,7 @@ export const MovieCard = () => {
                     </MovieCardWrapper>
                 ))}
             </Wrapper>
-        }  </>
+        }                  
+    </>
     );
 };
