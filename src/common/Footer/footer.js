@@ -7,7 +7,7 @@ export const Footer = () => {
         <Wrapper>
             <Text> Copyright © 2020 Movie Browser</Text>
 
-            <LogoWrapper to="/">
+            <LogoWrapper to="/movies">
                 <LogoText>Movies Browser</LogoText>
                 <LogoImage src={logoImage} alt='Logo' />
             </LogoWrapper>

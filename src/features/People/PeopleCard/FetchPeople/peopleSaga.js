@@ -1,9 +1,10 @@
-import { call, put, takeLatest } from "redux-saga/effects";
+import { call, delay, put, takeLatest } from "redux-saga/effects";
 import { getPopularPeople } from "./API";
 import { fetchPeople, fetchPeopleError, fetchPeopleSuccess } from "./peopleSlice";
 
 function* fetchPeopleHandler(action) {
     try {
+        yield delay (500);
         const people = yield call(getPopularPeople, action.payload);
         yield put(fetchPeopleSuccess(people));
     } catch (error) {

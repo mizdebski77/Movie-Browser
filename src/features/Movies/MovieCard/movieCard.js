@@ -20,6 +20,8 @@ export const MovieCard = () => {
     }, [dispatch]);
 
 
+    
+
 
     return (<>
         {status === "loading" ? <Loader /> : status === "error" ? <Error /> :
