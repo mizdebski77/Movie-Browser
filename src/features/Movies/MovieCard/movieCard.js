@@ -1,5 +1,5 @@
 import React from 'react';
-import { CardImage, Genre, GenreWrapper, MovieCardWrapper, MovieTitle, MovieYear, Raiting, Star, Wrapper } from './styledMovieCard';
+import { CardImage, Genre, GenreWrapper, MovieCardWrapper, MovieTitle, MovieYear, Raiting, Informations, Star, Wrapper } from './styledMovieCard';
 import star from '../../../common/Images/star.svg';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchMovies, selectMovies, selectStatus } from './FetchPopularMovies/moviesSlice';
@@ -20,9 +20,6 @@ export const MovieCard = () => {
     }, [dispatch]);
 
 
-    
-
-
     return (<>
         {status === "loading" ? <Loader /> : status === "error" ? <Error /> :
             <Wrapper>
@@ -30,17 +27,21 @@ export const MovieCard = () => {
 
                     <MovieCardWrapper to="xd" key={movie.id}>
                         <CardImage src={`${IMAGE_BASE_URL}${movie.poster_path}`} />
-                        <MovieTitle>{movie.original_title}</MovieTitle>
-                        <MovieYear> {new Date(movies.results[0].release_date).getFullYear()}</MovieYear>
-                        <GenreWrapper>
-                            {movie.genre_ids.map((genre) => (
-                                <Genre>{genre}</Genre>
-                            ))};
-                        </GenreWrapper>
-                        <Raiting>
-                            <Star src={star} />
-                            {movie.vote_average} / 10
-                        </Raiting>
+                        <Informations>
+
+                            <MovieTitle>{movie.original_title}</MovieTitle>
+                            <MovieYear> {new Date(movies.results[0].release_date).getFullYear()}</MovieYear>
+                            <GenreWrapper>
+                                {movie.genre_ids.map((genre) => (
+                                    <Genre>{genre}</Genre>
+                                ))};
+                            </GenreWrapper>
+                            <Raiting>
+                                <Star src={star} />
+                                {movie.vote_average} / 10
+                            </Raiting>
+                        </Informations>
+
                     </MovieCardWrapper>
                 ))}
             </Wrapper>
