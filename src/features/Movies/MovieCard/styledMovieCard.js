@@ -71,5 +71,6 @@ export const Raiting = styled.h3`
 `;
 
 export const Star = styled(SVG)`
-    margin-right: 20px;
+    margin-right: 16px;
+    width: 20px;
 `;

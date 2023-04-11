@@ -12,7 +12,7 @@ export const Navigation = () => {
                         <LogoImage src={logoImage} alt='Logo' />
                     </LogoWrapper>
                     <LinksWrapper>
-                        <Links exact to="/">Movies</Links>
+                        <Links exact to="/movies">Movies</Links>
                         <Links to="/people">People</Links>
                     </LinksWrapper>
                 </LinksContainer>

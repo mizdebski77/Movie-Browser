@@ -8,7 +8,7 @@ function App() {
     <HashRouter>
       <Navigation />
       <Switch>
-        <Route exact path="/"> <Movies /></Route>
+        <Route  path="/movies"> <Movies /></Route>
       </Switch>
       <Footer />
     </HashRouter>

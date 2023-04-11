@@ -1,10 +1,11 @@
 import React from 'react';
 import { CardImage, Genre, GenreWrapper, MovieCardWrapper, MovieTitle, MovieYear, Raiting, Star, Wrapper } from './styledMovieCard';
-import poster from '../../../common/Images/poster.jpg'
 import star from '../../../common/Images/star.svg';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchMovies, selectMovies, selectMoviesState, selectStatus } from './FetchPopularMovies/moviesSlice';
 import { useEffect } from 'react';
+import { Loader } from './Loader/loader';
+import { Error } from './Error/error';
 
 export const MovieCard = () => {
     const IMAGE_BASE_URL = 'https://image.tmdb.org/t/p/w500';
@@ -18,20 +19,17 @@ export const MovieCard = () => {
         dispatch(fetchMovies());
     }, [dispatch]);
 
-    if (status === "success") {
 
-        const date = movies.results[0].release_date
-        const formatedYear = new Date(date).getFullYear();
-        console.log(movies.results[0].genre_ids);
 
-        return (
+    return (<>
+        {status === "loading" ? <Loader /> : status === "error" ? <Error /> :
             <Wrapper>
                 {movies.results.map((movie) => (
 
                     <MovieCardWrapper to="xd" key={movie.id}>
                         <CardImage src={`${IMAGE_BASE_URL}${movie.poster_path}`} />
                         <MovieTitle>{movie.original_title}</MovieTitle>
-                        <MovieYear> {formatedYear}</MovieYear>
+                        <MovieYear> {new Date(movies.results[0].release_date).getFullYear()}</MovieYear>
                         <GenreWrapper>
                             {movie.genre_ids.map((genre) => (
                                 <Genre>{genre}</Genre>
@@ -42,9 +40,8 @@ export const MovieCard = () => {
                             {movie.vote_average} / 10
                         </Raiting>
                     </MovieCardWrapper>
-                ))};
+                ))}
             </Wrapper>
-        );
-    };
-}
-
+        }  </>
+    );
+};
