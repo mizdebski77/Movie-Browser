@@ -2,10 +2,10 @@ import React from 'react';
 import { CardImage, Genre, GenreWrapper, MovieCardWrapper, MovieTitle, MovieYear, Raiting, Star, Wrapper } from './styledMovieCard';
 import star from '../../../common/Images/star.svg';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchMovies, selectMovies, selectMoviesState, selectStatus } from './FetchPopularMovies/moviesSlice';
+import { fetchMovies, selectMovies, selectStatus } from './FetchPopularMovies/moviesSlice';
 import { useEffect } from 'react';
-import { Loader } from './Loader/loader';
-import { Error } from './Error/error';
+import { Loader } from '../../../common/Loader/loader';
+import { Error } from '../../../common/Error/error';
 
 export const MovieCard = () => {
     const IMAGE_BASE_URL = 'https://image.tmdb.org/t/p/w500';
