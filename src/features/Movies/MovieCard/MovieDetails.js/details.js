@@ -1,11 +1,11 @@
 import React, { useEffect } from 'react';
-import { CastWrapper, DataWrapper, DetailsWrapper, ImageWrapper, SimilarFilmsWrapper, Title, TitleImage, TitleWrapper, Wrapper } from './styledDetails';
+import { CastWrapper, DataWrapper, DetailsWrapper, ImageWrapper, RaitingWrapper, SimilarFilmsWrapper, Star, Title, TitleImage, TitleWrapper, Wrapper } from './styledDetails';
 import { useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchMovies, getDetailsByID, selectMovies, selectMoviesState, selectStatus } from '../FetchPopularMovies/moviesSlice';
 import { Loader } from '../../../../common/Loader/loader';
 import { Error } from '../../../../common/Error/error';
-
+import star from '../../../../common/Images/star.svg'
 export const Details = () => {
     const IMAGE_BASE_URL = 'https://image.tmdb.org/t/p/original';
 
@@ -20,19 +20,23 @@ export const Details = () => {
         dispatch(fetchMovies());
     }, [dispatch]);
 
-    console.log(movie);
-    
 
-    return (<>
-        {status === "loading" ? <Loader /> : status === "error" ? <Error /> :
 
-            <Wrapper>
-                <TitleWrapper backDrop={backDrop}></TitleWrapper>
-                <DataWrapper></DataWrapper>
-                <CastWrapper></CastWrapper>
-                <SimilarFilmsWrapper></SimilarFilmsWrapper>
-            </Wrapper>
-        }
-    </>
+    return (
+        <>
+            {status === "loading" ? <Loader /> : status === "error" ? <Error /> :
+                <Wrapper>
+                    <TitleWrapper backDrop={backDrop}>
+                        <ImageWrapper backDrop={backDrop}>
+                            <Title>{movie.title}</Title>
+                            <RaitingWrapper><Star src={star} />{movie.vote_average}</RaitingWrapper>
+                        </ImageWrapper>
+                    </TitleWrapper>
+                    <DataWrapper></DataWrapper>
+                    <CastWrapper></CastWrapper>
+                    <SimilarFilmsWrapper></SimilarFilmsWrapper>
+                </Wrapper>
+            }
+        </>
     );
 };

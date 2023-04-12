@@ -5,6 +5,7 @@ export const theme = {
         fontPrimary: "#e3a207",
         fontSecondary: "#ffff",
         inputColor: "rgb(126, 131, 154)",
+        detailsBackground: "rgb(0, 0 , 0)"
 
 
     },

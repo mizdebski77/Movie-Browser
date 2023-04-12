@@ -13,7 +13,10 @@ export const MovieCard = () => {
     const status = useSelector(selectStatus);
     const movies = useSelector(selectMovies);
 
-
+    const dispatch = useDispatch();
+    useEffect(() => {
+        dispatch(fetchMovies());
+    }, [dispatch]);
 
     return (<>
         {status === "loading" ? <Loader /> : status === "error" ? <Error /> :
@@ -25,7 +28,7 @@ export const MovieCard = () => {
 
                             <MovieTitle>{movie.original_title}</MovieTitle>
                             <MovieYear>
-                                
+
                                 {new Date(movie.release_date).getFullYear()}
                             </MovieYear>
                             <GenreWrapper>
