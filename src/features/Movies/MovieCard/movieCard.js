@@ -26,12 +26,11 @@ export const MovieCard = () => {
         return genre ? genre.name : "";
     };
 
-
     return (<>
         {status === "loading" ? <Loader /> : status === "error" ? <Error /> :
             <Wrapper>
                 {movies.map((movie) => (
-                    <MovieCardWrapper to={`/movies/${movie.id}`} key={movie.id}>
+                    <MovieCardWrapper to={`/movies/${movie.id}`} onClick={() => window.scrollTo(0, 0)} key={movie.id}>
                         <CardImage src={`${IMAGE_BASE_URL}${movie.poster_path}`} />
                         <Informations>
 

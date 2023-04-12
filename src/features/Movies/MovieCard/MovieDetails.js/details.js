@@ -29,6 +29,7 @@ import { Loader } from '../../../../common/Loader/loader';
 import { Error } from '../../../../common/Error/error';
 import star from '../../../../common/Images/star.svg'
 import { fetchGenre, selectGenre } from '../FetchGenres/genreSlice';
+
 export const Details = () => {
     const imageBackdropURL = 'https://image.tmdb.org/t/p/original';
 
