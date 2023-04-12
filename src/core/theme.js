@@ -17,3 +17,4 @@ export const theme = {
 }
 
 export const boxShadow = "0px 0px 10px rgb(24, 24, 27)";
+export const whiteShadow = "0px 0px 10px rgb(255, 255, 255)"

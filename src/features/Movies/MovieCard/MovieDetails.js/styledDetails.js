@@ -1,5 +1,6 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import SVG from "react-inlinesvg";
+import { boxShadow, whiteShadow } from "../../../../core/theme";
 
 
 export const Wrapper = styled.div`
@@ -42,19 +43,110 @@ export const Title = styled.h1`
 
 export const Star = styled(SVG)`
     width: 40px;
+
+    ${({ change }) => change && css`
+        width: 24px;
+    `}; 
 `;
 
 export const RaitingWrapper = styled.h1`
     display: flex;
-    margin: 0 40px 40px 40px;
+    margin: 0 40px 64px 40px;
     color: white;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     gap: 20px;
     align-items: center;
 `;
 
-export const DataWrapper = styled.div`
+export const DetailsWrapper = styled.div`
+    max-width: 1200px;
+    margin: 40px auto;
 
+`;
+
+export const DetailsTitle = styled.h1`
+    color: ${({ theme }) => theme.color.secondColor};
+`;
+
+export const DetailsCard = styled.div`
+    background: ${({ theme }) => theme.color.secondColor};
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: ${boxShadow};
+    display: grid;
+    grid-template-columns: auto 2fr;
+    justify-content: center;
+    text-align: center;
+    gap: 40px;
+`;
+
+export const DetailsImage = styled.img`
+    max-width: 320px;
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: ${whiteShadow};
+`;
+
+export const InformationsWrapper = styled.div`
+    display: grid;
+`;
+
+export const Name = styled.h2`
+    font-weight: normal;
+    font-size: 36px;
+    margin: 0;
+`;
+
+export const TextDetails = styled.h3`
+    margin: 0;
+    text-align: left;
+    font-weight: normal;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 20px;
+`;
+
+export const Span = styled.span`
+    color: ${({ theme }) => theme.color.fontSecondary};
+    ${({ change }) => change && css`
+        text-transform: uppercase;
+    `};     
+`;
+
+export const GenreContainer = styled.div`
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    font-size: 12px;
+    align-items: center;
+
+    @media (max-width:${({ theme }) => theme.breakPoint.mobileMax}px){
+        font-size: 10px;
+    }
+`;  
+
+export const Genre = styled.div`
+    background: ${({ theme }) => theme.color.fontPrimary};
+    padding: 10px;
+    border-radius: 10px;
+    color: ${({ theme }) => theme.color.fontSecondary};
+`;
+
+export const OverviewWrapper = styled.div`
+    display: grid;
+`;
+
+export const OverviewTitle = styled.h2`
+    font-weight: normal;
+    margin-bottom: 0;
+`;
+
+export const OverviewText = styled.h3`
+    color: ${({theme}) => theme.color.fontSecondary};
+    font-weight: normal;
+    text-align: left;
+    font-weight: normal;
 `;
 
 export const CastWrapper = styled.div``;
