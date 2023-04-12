@@ -38,13 +38,13 @@ export const Details = () => {
                             <InformationsWrapper>
                                 <Name>{movie.title}</Name>
                                 <TextDetails> Relase: <Span> {" "}{movie.release_date} </Span> </TextDetails>
-                                <TextDetails> Language: <Span change> {" "}{movie.original_language} </Span> </TextDetails>
+                                <TextDetails> Language: <Span change="true"> {" "}{movie.original_language} </Span> </TextDetails>
                                 <GenreContainer>
                                     {movie.genre_ids.map((genre) => (
                                         <Genre key={genre}>{genre}</Genre>
                                     ))}
                                 </GenreContainer>
-                                <TextDetails><Star change src={star} />  <Span> {" "}{movie.vote_average} / 10  </Span> </TextDetails>
+                                <TextDetails><Star change = "true" src={star} />  <Span> {" "}{movie.vote_average} / 10  </Span> </TextDetails>
 
                                 <OverviewWrapper>
                                     <OverviewTitle>Overview </OverviewTitle>
