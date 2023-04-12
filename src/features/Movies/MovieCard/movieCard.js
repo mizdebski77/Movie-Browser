@@ -6,17 +6,26 @@ import { fetchMovies, selectMovies, selectStatus } from './FetchPopularMovies/mo
 import { useEffect } from 'react';
 import { Loader } from '../../../common/Loader/loader';
 import { Error } from '../../../common/Error/error';
+import { fetchGenre, selectGenre } from './FetchGenres/genreSlice';
 
 export const MovieCard = () => {
     const IMAGE_BASE_URL = 'https://image.tmdb.org/t/p/w500';
 
     const status = useSelector(selectStatus);
     const movies = useSelector(selectMovies);
+    const genres = useSelector(selectGenre);
 
     const dispatch = useDispatch();
     useEffect(() => {
         dispatch(fetchMovies());
+        dispatch(fetchGenre());
     }, [dispatch]);
+
+    const getGenreName = (genreId) => {
+        const genre = genres.find((genre) => genre.id === genreId);
+        return genre ? genre.name : "";
+    };
+
 
     return (<>
         {status === "loading" ? <Loader /> : status === "error" ? <Error /> :
@@ -33,7 +42,7 @@ export const MovieCard = () => {
                             </MovieYear>
                             <GenreWrapper>
                                 {movie.genre_ids.map((genre) => (
-                                    <Genre key={genre}>{genre}</Genre>
+                                    <Genre key={genre}>{getGenreName(genre)}</Genre>
                                 ))};
                             </GenreWrapper>
                             <Raiting>
