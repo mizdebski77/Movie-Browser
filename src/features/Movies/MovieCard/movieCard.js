@@ -10,29 +10,24 @@ import { Error } from '../../../common/Error/error';
 export const MovieCard = () => {
     const IMAGE_BASE_URL = 'https://image.tmdb.org/t/p/w500';
 
-
     const status = useSelector(selectStatus);
     const movies = useSelector(selectMovies);
-    const dispatch = useDispatch();
-
-    useEffect(() => {
-        dispatch(fetchMovies());
-    }, [dispatch]);
-
 
 
 
     return (<>
         {status === "loading" ? <Loader /> : status === "error" ? <Error /> :
             <Wrapper>
-                {movies.results.map((movie) => (
-
-                    <MovieCardWrapper to="xd" key={movie.id}>
+                {movies.map((movie) => (
+                    <MovieCardWrapper to={`/movies/${movie.id}`} key={movie.id}>
                         <CardImage src={`${IMAGE_BASE_URL}${movie.poster_path}`} />
                         <Informations>
 
                             <MovieTitle>{movie.original_title}</MovieTitle>
-                            <MovieYear> {new Date(movies.results[0].release_date).getFullYear()}</MovieYear>
+                            <MovieYear>
+                                
+                                {new Date(movie.release_date).getFullYear()}
+                            </MovieYear>
                             <GenreWrapper>
                                 {movie.genre_ids.map((genre) => (
                                     <Genre key={genre}>{genre}</Genre>
@@ -47,7 +42,7 @@ export const MovieCard = () => {
                     </MovieCardWrapper>
                 ))}
             </Wrapper>
-        }                  
+        }
     </>
     );
 };
