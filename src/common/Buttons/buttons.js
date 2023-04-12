@@ -3,7 +3,7 @@ import { Arrows, Button, Page, Wrapper } from './styledButtons';
 import rightArrow from '../Images/rightArrow.svg';
 import leftArrow from '../Images/leftArrow.svg'
 import { useDispatch, useSelector } from 'react-redux';
-import { firstPage, lastPage, nextPage, prevPage, selectMoviesState, selectPage, selectTotalPages } from '../../features/Movies/MovieCard/FetchPopularMovies/moviesSlice';
+import { firstPage, lastPage, nextPage, prevPage, selectPage, selectTotalPages } from '../../features/Movies/MovieCard/FetchPopularMovies/moviesSlice';
 import { fetchMovies } from '../../features/Movies/MovieCard/FetchPopularMovies/moviesSlice'; // importuj akcję fetchMovies
 
 export const Buttons = () => {

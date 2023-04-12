@@ -1,5 +1,4 @@
 import axios from "axios";
-import store from "../../../../core/store";
 
 const apiKey = "7c90040c75201f76a993fda6ead4b277";
 const URL = 'https://api.themoviedb.org/3/discover/movie';

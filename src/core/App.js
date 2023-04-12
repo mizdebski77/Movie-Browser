@@ -6,7 +6,7 @@ import { People } from "../features/People/people";
 
 function App() {
   return (
-    <HashRouter>
+    <HashRouter basename="/movie-browser">
       <Navigation />
       <Switch>
         <Route path="/movies"> <Movies /></Route>
