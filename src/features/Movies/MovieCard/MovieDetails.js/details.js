@@ -1,5 +1,9 @@
 import React, { useEffect } from 'react';
 import {
+    CastCard,
+    CastCharacter,
+    CastImage,
+    CastName,
     CastWrapper,
     DetailsCard,
     DetailsImage,
@@ -29,7 +33,8 @@ import { Loader } from '../../../../common/Loader/loader';
 import { Error } from '../../../../common/Error/error';
 import star from '../../../../common/Images/star.svg'
 import { fetchGenre, selectGenre } from '../FetchGenres/genreSlice';
-import { fetchCredits, selectCast } from './FetchCredits/creditsSlice';
+import { fetchCredits, selectCast, selectCreditsState } from './FetchCredits/creditsSlice';
+import { selectPeople } from '../../../People/PeopleCard/FetchPeople/peopleSlice';
 
 export const Details = () => {
     const imageBackdropURL = 'https://image.tmdb.org/t/p/original';
@@ -44,6 +49,8 @@ export const Details = () => {
     const poster = movie ? `${imageBackdropURL}${movie.poster_path}` : '';
     const dispatch = useDispatch();
 
+    const xd = useSelector(selectCreditsState)
+
 
     useEffect(() => {
         dispatch(fetchMovies());
@@ -51,7 +58,7 @@ export const Details = () => {
         dispatch(fetchCredits(id));
     }, [dispatch, id]);
 
-    console.log(credits);
+    console.log(xd);
 
 
 
@@ -74,6 +81,7 @@ export const Details = () => {
                             <RaitingWrapper><Star src={star} />{movie.vote_average}</RaitingWrapper>
                         </ImageWrapper>
                     </TitleWrapper>
+
                     <DetailsWrapper>
                         <DetailsTitle>Movie Details</DetailsTitle>
                         <DetailsCard>
@@ -96,9 +104,20 @@ export const Details = () => {
                                 </OverviewWrapper>
                             </InformationsWrapper>
                         </DetailsCard>
+
+                        <DetailsTitle cast>Full Cast</DetailsTitle>
+
+                        <CastWrapper>
+                            {credits && credits.map((cast) => (
+                                <CastCard to={`/profile/${cast.id}`} key={cast.id} onClick={() => window.scrollTo(0, 0)}>
+                                    <CastImage src={`${imageBackdropURL}${cast.profile_path ?? poster}`} />
+                                    <CastCharacter>  {cast.character}</CastCharacter>
+                                    <CastName>{cast.name}</CastName>
+                                </CastCard>
+                            ))};
+                        </CastWrapper>
                     </DetailsWrapper>
-                    <CastWrapper></CastWrapper>
-                    <SimilarFilmsWrapper></SimilarFilmsWrapper>
+
                 </Wrapper>
             }
         </>

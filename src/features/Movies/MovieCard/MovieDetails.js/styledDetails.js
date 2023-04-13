@@ -1,6 +1,7 @@
 import styled, { css } from "styled-components";
 import SVG from "react-inlinesvg";
 import { boxShadow, whiteShadow } from "../../../../core/theme";
+import { Link } from "react-router-dom";
 
 
 export const Wrapper = styled.div`
@@ -61,11 +62,16 @@ export const RaitingWrapper = styled.h1`
 export const DetailsWrapper = styled.div`
     max-width: 1200px;
     margin: 40px auto;
+    padding: 16px;
 
 `;
 
 export const DetailsTitle = styled.h1`
     color: ${({ theme }) => theme.color.secondColor};
+
+    ${({ cast }) => cast && css`
+        margin: 40px 0;
+    `};
 `;
 
 export const DetailsCard = styled.div`
@@ -124,7 +130,7 @@ export const GenreContainer = styled.div`
     @media (max-width:${({ theme }) => theme.breakPoint.mobileMax}px){
         font-size: 10px;
     }
-`;  
+`;
 
 export const Genre = styled.div`
     background: ${({ theme }) => theme.color.fontPrimary};
@@ -143,13 +149,56 @@ export const OverviewTitle = styled.h2`
 `;
 
 export const OverviewText = styled.h3`
-    color: ${({theme}) => theme.color.fontSecondary};
+    color: ${({ theme }) => theme.color.fontSecondary};
     font-weight: normal;
     text-align: left;
     font-weight: normal;
 `;
 
-export const CastWrapper = styled.div``;
+export const CastWrapper = styled.section`
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 16px;
+    margin: auto;
+    max-width: 1200px;
+`;
 
-export const SimilarFilmsWrapper = styled.div``;
+export const CastCard = styled(Link)`
+    background: ${({ theme }) => theme.color.secondColor};
+    display: grid;
+    border-radius: 10px;
+    padding: 16px;
+    gap: 12px;
+    box-shadow: ${boxShadow};
+    text-align: center;
+    text-decoration: none;
+    transition: 0.5s;
+
+    &:hover{
+        transform: scale(1.03);
+    }
+`;
+
+export const CastImage = styled.img`
+    max-width: 300px;
+    width: 100%;
+    margin: 0 auto;
+    border-radius: 10px;
+    box-shadow: ${whiteShadow};
+`;
+
+export const CastName = styled.h1`
+    margin: 0;
+    color: ${({ theme }) => theme.color.fontSecondary};
+    font-size: 20px;
+    font-weight: normal;
+`;
+
+export const CastCharacter = styled.h1`
+    margin: 0;
+    color: ${({ theme }) => theme.color.fontPrimary};
+    font-size: 24px;
+    font-weight: normal;
+`;
+
 
