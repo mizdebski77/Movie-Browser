@@ -26,4 +26,8 @@ const profileSlice = createSlice({
 export const { fetchProfile, fetchProfileError, fetchProfileSuccess } = profileSlice.actions;
 export const selectProfileState = state => state.profile;
 
+export const selectProfile = state => selectProfileState(state).profile;
+export const selectProfileStatus = state => selectProfileState(state).status;
+
+
 export default profileSlice.reducer;
