@@ -14,7 +14,7 @@ function App() {
         <Route exact path="/movies"><Movies /></Route>
         <Route path="/people"><People /></Route>
         <Route path="/movies/:id"><Details /></Route>
-        <Route path="/people/:id"><Profile /></Route>
+        <Route path="/profile/:id"><Profile /></Route>
         <Route path="/"><Redirect to="movies" /> </Route>
 
       </Switch>

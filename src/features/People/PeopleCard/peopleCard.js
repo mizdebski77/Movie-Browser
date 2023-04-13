@@ -18,13 +18,12 @@ export const PeopleCard = () => {
         dispatch(fetchPeople());
     }, [dispatch]);
 
-    console.log(people);
     return (
         <>
             {status === "loading" ? <Loader /> : status === "error" ? <Error /> :
                 <Wrapper>
                     {people.results.map((person) => (
-                        <PersonCard to={`/people/${person.id}`} key={person.id}>
+                        <PersonCard to={`/profile/${person.id}`} key={person.id}>
                             <CardImage src={`${IMAGE_BASE_URL}${person.profile_path}`} />
                             <Name>{person.name}</Name>
                         </PersonCard>
