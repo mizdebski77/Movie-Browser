@@ -8,7 +8,7 @@ const moviesSlice = createSlice({
     },
 
     reducers: {
-        fetchMovies: (state,) => {
+        fetchMovies: (state) => {
             state.status = "loading";
         },
 

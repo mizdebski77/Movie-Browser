@@ -29,6 +29,7 @@ import { Loader } from '../../../../common/Loader/loader';
 import { Error } from '../../../../common/Error/error';
 import star from '../../../../common/Images/star.svg'
 import { fetchGenre, selectGenre } from '../FetchGenres/genreSlice';
+import { fetchCredits, selectCast, selectCreditsState } from './FetchCredits/creditsSlice';
 
 export const Details = () => {
     const imageBackdropURL = 'https://image.tmdb.org/t/p/original';
@@ -38,7 +39,8 @@ export const Details = () => {
     const movie = useSelector(state => getDetailsByID(state, id));
     const status = useSelector(selectStatus);
     const genres = useSelector(selectGenre);
-
+    const credits = useSelector(selectCast);
+    const xd = useSelector(selectCreditsState)
     const backDrop = movie ? `${imageBackdropURL}${movie.backdrop_path}` : '';
     const poster = movie ? `${imageBackdropURL}${movie.poster_path}` : '';
     const dispatch = useDispatch();
@@ -47,7 +49,13 @@ export const Details = () => {
     useEffect(() => {
         dispatch(fetchMovies());
         dispatch(fetchGenre());
-    }, [dispatch]);
+        dispatch(fetchCredits(id));
+    }, [dispatch, id]);
+
+    console.log(credits);
+
+
+
 
     const getGenreName = (genreId) => {
         const genre = genres.find((genre) => genre.id === genreId);
