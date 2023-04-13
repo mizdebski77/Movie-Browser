@@ -1,4 +1,4 @@
-import { GetPopularMovies } from "./API";
+import { GetPopularMovies } from "../../../../core/apiCalls";
 import { fetchMovies, fetchMoviesError, fetchMoviesSuccess } from "./moviesSlice";
 import { call, delay, put, takeLatest } from "redux-saga/effects";
 
