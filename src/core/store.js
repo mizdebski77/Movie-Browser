@@ -4,6 +4,7 @@ import moviesReducer from "../features/Movies/MovieCard/FetchPopularMovies/movie
 import rootSaga from "./rootSaga";
 import peopleReducer from '../features/People/PeopleCard/FetchPeople/peopleSlice';
 import genresReducer from '../features/Movies/MovieCard/FetchGenres/genreSlice'
+import profileReducer from '../features/People/PeopleCard/Profile/FetchPeopleDetails/profileSlice';
 
 const sagaMiddleware = createSagaMiddleware();
 
@@ -12,6 +13,7 @@ const store = configureStore({
         movies: moviesReducer,
         people: peopleReducer,
         genres: genresReducer,
+        profile: profileReducer,
     },
 
     middleware: [sagaMiddleware],

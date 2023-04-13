@@ -28,6 +28,8 @@ export const selecPeopleState = state => state.people;
 
 export const selectPeople = state => selecPeopleState(state).people.results;
 export const selectStatus = state => selecPeopleState(state).status;
+export const xd = state => selecPeopleState(state).people;
+
 
 export const getProfileByID = (state, personID) => {
     const people = selectPeople(state);

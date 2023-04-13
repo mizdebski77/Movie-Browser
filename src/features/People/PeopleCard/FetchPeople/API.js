@@ -1,10 +1,9 @@
 import axios from "axios";
+import { apiKey, peopleURL } from "../../../../core/apiData";
 
-const apiKey = "7c90040c75201f76a993fda6ead4b277";
-const URL = 'https://api.themoviedb.org/3/person/popular';
 
 export const getPopularPeople = async (page, language) => {
-    const response = await axios.get(URL, {
+    const response = await axios.get(peopleURL, {
         params: {
             api_key: apiKey,
             language: language || 'en-US',
