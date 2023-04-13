@@ -7,17 +7,16 @@ import { selectPage, selectTotalPages } from '../../features/Movies/MovieCard/Fe
 
 export const Buttons = () => {
     const pagesNumber = useSelector(selectTotalPages);
-    const pageNumber = useSelector(selectPage);
+    const currentPage = useSelector(selectPage);
 
 
     return (
         <Wrapper>
-            <Button disabled={pageNumber === 1}><Arrows src={leftArrow} />First</Button>
-            <Button disabled={pageNumber === 1}><Arrows src={leftArrow} />Previous</Button>
-            <Page>Page {pageNumber} of {pagesNumber}</Page>
-            <Button disabled={pageNumber === pagesNumber} >Next<Arrows src={rightArrow} /> </Button>
-            <Button disabled={pageNumber === pagesNumber} >Last<Arrows src={rightArrow} /> </Button>
+            <Button disabled={currentPage === 1}><Arrows src={leftArrow} />First</Button>
+            <Button disabled={currentPage === 1}><Arrows src={leftArrow} />Previous</Button>
+            <Page>Page {currentPage} of {pagesNumber}</Page>
+            <Button disabled={currentPage === pagesNumber} >Next<Arrows src={rightArrow} /> </Button>
+            <Button disabled={currentPage === pagesNumber} >Last<Arrows src={rightArrow} /> </Button>
         </Wrapper >
     );
 };
-

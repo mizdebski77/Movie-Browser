@@ -20,9 +20,6 @@ export const Profile = () => {
         dispatch(fetchProfile(id));
     }, [dispatch, id])
 
-    console.log(profile);
-
-
 
     return (
         <>
