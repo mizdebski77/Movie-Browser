@@ -23,7 +23,7 @@ export const PeopleCard = () => {
             {status === "loading" ? <Loader /> : status === "error" ? <Error /> :
                 <Wrapper>
                     {people.map((person) => (
-                        <PersonCard to={`/profile/${person.id}`} key={person.id}>
+                        <PersonCard to={`/profile/${person.id}`} key={person.id} onClick={() => window.scrollTo(0, 0)}>
                             <CardImage src={`${IMAGE_BASE_URL}${person.profile_path}`} />
                             <Name>{person.name}</Name>
                         </PersonCard>

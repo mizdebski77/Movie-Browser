@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Loader } from '../../../../common/Loader/loader';
 import { Error } from '../../../../common/Error/error';
 import { fetchProfile, selectProfile, selectProfileStatus } from './FetchPeopleDetails/profileSlice';
+import { fetchPersonCredits } from './FetchCredits/creditsSlice';
 
 
 export const Profile = () => {
@@ -18,6 +19,7 @@ export const Profile = () => {
 
     useEffect(() => {
         dispatch(fetchProfile(id));
+        dispatch(fetchPersonCredits(id));
     }, [dispatch, id])
 
 

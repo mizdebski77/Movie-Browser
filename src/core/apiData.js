@@ -4,4 +4,5 @@ export const genreURL = "https://api.themoviedb.org/3/genre/movie/list";
 export const peopleURL = "https://api.themoviedb.org/3/person/popular";
 export const peopleDetailsURL = "https://api.themoviedb.org/3/person";
 export const movieCreditsURL = "https://api.themoviedb.org/3/movie/";
+export const personCreditsURL = "https://api.themoviedb.org/3/person/";
 export const apiLanguage = "&language=en";
