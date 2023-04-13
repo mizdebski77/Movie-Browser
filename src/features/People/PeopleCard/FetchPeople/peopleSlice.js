@@ -26,8 +26,16 @@ const peopleSlice = createSlice({
 export const { fetchPeople, fetchPeopleSuccess, fetchPeopleError } = peopleSlice.actions;
 export const selecPeopleState = state => state.people;
 
-export const selectPeople = state => selecPeopleState(state).people;
+export const selectPeople = state => selecPeopleState(state).people.results;
 export const selectStatus = state => selecPeopleState(state).status;
+
+export const getProfileByID = (state, personID) => {
+    const people = selectPeople(state);
+    if (people && people.length > 0) {
+        return people.find(person => person.id === parseInt(personID));
+    }
+    return undefined;
+}
 
 
 export default peopleSlice.reducer;

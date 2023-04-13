@@ -22,7 +22,7 @@ export const PeopleCard = () => {
         <>
             {status === "loading" ? <Loader /> : status === "error" ? <Error /> :
                 <Wrapper>
-                    {people.results.map((person) => (
+                    {people.map((person) => (
                         <PersonCard to={`/profile/${person.id}`} key={person.id}>
                             <CardImage src={`${IMAGE_BASE_URL}${person.profile_path}`} />
                             <Name>{person.name}</Name>
