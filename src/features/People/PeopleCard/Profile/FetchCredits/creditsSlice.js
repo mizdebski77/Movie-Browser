@@ -24,9 +24,9 @@ const personCreditsSlice = createSlice({
 });
 
 export const { fetchPersonCredits, fetchPersonCreditsError, fetchPersonCreditsSuccess } = personCreditsSlice.actions;
-export const selectPersonCreditsState = state => state.credits.credits;
+export const selectPersonCreditsState = state => state.personCredits;
 
-export const selectCast = state => selectPersonCreditsState(state);
+export const selectCast = state => selectPersonCreditsState(state).personCredits.cast;
 
 
 export default personCreditsSlice.reducer;

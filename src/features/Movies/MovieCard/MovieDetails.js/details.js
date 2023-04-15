@@ -18,7 +18,6 @@ import {
     OverviewTitle,
     OverviewWrapper,
     RaitingWrapper,
-    SimilarFilmsWrapper,
     Span,
     Star,
     TextDetails,
@@ -33,8 +32,7 @@ import { Loader } from '../../../../common/Loader/loader';
 import { Error } from '../../../../common/Error/error';
 import star from '../../../../common/Images/star.svg'
 import { fetchGenre, selectGenre } from '../FetchGenres/genreSlice';
-import { fetchCredits, selectCast, selectCreditsState } from './FetchCredits/creditsSlice';
-import { selectPeople } from '../../../People/PeopleCard/FetchPeople/peopleSlice';
+import { fetchCredits, selectCast } from './FetchCredits/creditsSlice';
 
 export const Details = () => {
     const imageBackdropURL = 'https://image.tmdb.org/t/p/original';
@@ -49,7 +47,6 @@ export const Details = () => {
     const poster = movie ? `${imageBackdropURL}${movie.poster_path}` : '';
     const dispatch = useDispatch();
 
-    const xd = useSelector(selectCreditsState)
 
 
     useEffect(() => {
@@ -58,7 +55,6 @@ export const Details = () => {
         dispatch(fetchCredits(id));
     }, [dispatch, id]);
 
-    console.log(xd);
 
 
 
@@ -71,10 +67,12 @@ export const Details = () => {
 
 
 
+
     return (
         <>
             {status === "loading" ? <Loader /> : status === "error" ? <Error /> :
                 <Wrapper>
+
                     <TitleWrapper backDrop={backDrop}>
                         <ImageWrapper backDrop={backDrop}>
                             <Title>{movie.title}</Title>
@@ -87,7 +85,7 @@ export const Details = () => {
                         <DetailsCard>
                             <DetailsImage src={poster} />
                             <InformationsWrapper>
-                                <Name>{movie.title}</Name>
+                                <Name>{movie.title && movie.title}</Name>
                                 <TextDetails> Relase: <Span> {" "}{movie.release_date} </Span> </TextDetails>
                                 <TextDetails> Language: <Span change="true"> {" "}{movie.original_language} </Span> </TextDetails>
                                 <GenreContainer>
