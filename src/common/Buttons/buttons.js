@@ -12,7 +12,7 @@ export const Buttons = () => {
 
     const dispatch = useDispatch();
 
-    console.log(lastPageNumber);
+
 
     return (
         <Wrapper>

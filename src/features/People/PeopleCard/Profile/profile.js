@@ -32,7 +32,6 @@ export const Profile = () => {
         return genre ? genre.name : "";
     };
 
-    console.log(cast);
 
 
 
