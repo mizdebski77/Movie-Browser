@@ -2,7 +2,7 @@ import React from 'react';
 import { CardImage, Genre, GenreWrapper, MovieCardWrapper, MovieTitle, MovieYear, Raiting, Informations, Star, Wrapper } from './styledMovieCard';
 import star from '../../../common/Images/star.svg';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchMovies, selectMoviesByQuery, selectStatus } from './FetchPopularMovies/moviesSlice';
+import { fetchMovies, selectMoviesByQuery, selectPage, selectStatus } from './FetchPopularMovies/moviesSlice';
 import { useEffect } from 'react';
 import { Loader } from '../../../common/Loader/loader';
 import { Error } from '../../../common/Error/error';
@@ -17,13 +17,14 @@ export const MovieCard = () => {
     const status = useSelector(selectStatus);
     const movies = useSelector((state) => selectMoviesByQuery(state, query));
     const genres = useSelector(selectGenre);
+    const page = useSelector(selectPage);
 
 
     const dispatch = useDispatch();
     useEffect(() => {
-        dispatch(fetchMovies());
+        dispatch(fetchMovies(page));
         dispatch(fetchGenre());
-    }, [dispatch]);
+    }, [dispatch, page]);
 
     const getGenreName = (genreId) => {
         const genre = genres.find((genre) => genre.id === genreId);

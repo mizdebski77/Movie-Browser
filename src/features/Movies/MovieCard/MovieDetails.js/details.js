@@ -27,7 +27,7 @@ import {
 } from './styledDetails';
 import { useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchMovies, getDetailsByID, selectStatus } from '../FetchPopularMovies/moviesSlice';
+import { fetchMovies, getDetailsByID, selectPage, selectStatus } from '../FetchPopularMovies/moviesSlice';
 import { Loader } from '../../../../common/Loader/loader';
 import { Error } from '../../../../common/Error/error';
 import star from '../../../../common/Images/star.svg'
@@ -46,14 +46,15 @@ export const Details = () => {
     const backDrop = movie ? `${imageBackdropURL}${movie.backdrop_path}` : '';
     const poster = movie ? `${imageBackdropURL}${movie.poster_path}` : '';
     const dispatch = useDispatch();
+    const page = useSelector(selectPage);
 
 
 
     useEffect(() => {
-        dispatch(fetchMovies());
+        dispatch(fetchMovies(page));
         dispatch(fetchGenre());
         dispatch(fetchCredits(id));
-    }, [dispatch, id]);
+    }, [dispatch, id, page]);
 
 
 

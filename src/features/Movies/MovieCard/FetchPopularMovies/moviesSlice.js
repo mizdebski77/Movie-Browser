@@ -4,6 +4,7 @@ const moviesSlice = createSlice({
     name: "movies",
     initialState: {
         status: "loading",
+        page: 1,
         movies: [],
     },
 
@@ -20,16 +21,20 @@ const moviesSlice = createSlice({
         fetchMoviesError: (state) => {
             state.status = "error";
         },
+
+        setPage: (state, { payload: page }) => {
+            state.page = page;
+        }
     }
 });
 
-export const { fetchMovies, fetchMoviesError, fetchMoviesSuccess, currentPage } = moviesSlice.actions;
+export const { setPage, fetchMovies, fetchMoviesError, fetchMoviesSuccess } = moviesSlice.actions;
 export const selectMoviesState = state => state.movies;
 
 export const selectMovies = state => selectMoviesState(state).movies.results;
 export const selectStatus = state => selectMoviesState(state).status;
 export const selectTotalPages = state => selectMoviesState(state).movies.total_pages;
-export const selectPage = state => selectMoviesState(state).movies.page;
+export const selectPage = state => selectMoviesState(state).page;
 
 export const getDetailsByID = (state, movieID) => {
     const movies = selectMovies(state);
