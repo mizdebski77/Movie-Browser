@@ -16,11 +16,11 @@ export const Buttons = () => {
 
     return (
         <Wrapper>
-            <Button disabled={currentPage === 1} onClick={() => dispatch(setPage(1))}><Arrows src={leftArrow} />First</Button>
-            <Button disabled={currentPage === 1} onClick={() => dispatch(setPage(currentPage -1))}><Arrows src={leftArrow} />Previous</Button>
+            <Button disabled={currentPage === 1} onClick={() => dispatch(setPage(1)) && window.scrollTo(0, 0)}><Arrows src={leftArrow} />First</Button>
+            <Button disabled={currentPage === 1} onClick={() => dispatch(setPage(currentPage -1)) && window.scrollTo(0, 0)}><Arrows src={leftArrow} />Previous</Button>
             <Page>Page {currentPage} of {lastPageNumber}</Page>
-            <Button disabled={currentPage === lastPageNumber} onClick={() => dispatch(setPage(currentPage + 1))}>Next<Arrows src={rightArrow} /></Button>
-            <Button disabled={currentPage === lastPageNumber} onClick={() => dispatch(setPage(lastPageNumber))}>Last<Arrows src={rightArrow} /></Button>
+            <Button disabled={currentPage === lastPageNumber} onClick={() => dispatch(setPage(currentPage + 1)) && window.scrollTo(0, 0)}>Next<Arrows src={rightArrow} /></Button>
+            <Button disabled={currentPage === lastPageNumber} onClick={() => dispatch(setPage(lastPageNumber)) && window.scrollTo(0, 0) }>Last<Arrows src={rightArrow} /></Button>
         </Wrapper >
     );
 };
