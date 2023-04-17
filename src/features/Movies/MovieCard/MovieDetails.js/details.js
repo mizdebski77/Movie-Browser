@@ -33,9 +33,9 @@ import { Error } from '../../../../common/Error/error';
 import star from '../../../../common/Images/star.svg'
 import { fetchGenre, selectGenre } from '../FetchGenres/genreSlice';
 import { fetchCredits, selectCast } from './FetchCredits/creditsSlice';
+import { IMAGE_BASE_URL } from '../../../../core/apiData';
 
 export const Details = () => {
-    const imageBackdropURL = 'https://image.tmdb.org/t/p/original';
 
 
     const { id } = useParams();
@@ -43,8 +43,8 @@ export const Details = () => {
     const status = useSelector(selectStatus);
     const genres = useSelector(selectGenre);
     const credits = useSelector(selectCast);
-    const backDrop = movie ? `${imageBackdropURL}${movie.backdrop_path}` : '';
-    const poster = movie ? `${imageBackdropURL}${movie.poster_path}` : '';
+    const backDrop = movie ? `${IMAGE_BASE_URL}${movie.backdrop_path}` : '';
+    const poster = movie ? `${IMAGE_BASE_URL}${movie.poster_path}` : '';
     const dispatch = useDispatch();
     const page = useSelector(selectPage);
 
@@ -106,7 +106,7 @@ export const Details = () => {
                         <CastWrapper>
                             {credits && credits.map((cast) => (
                                 <CastCard to={`/profile/${cast.id}`} key={cast.id} onClick={() => window.scrollTo(0, 0)}>
-                                    <CastImage src={`${imageBackdropURL}${cast.profile_path ?? poster}`} />
+                                    <CastImage src={`${IMAGE_BASE_URL}${cast.profile_path ?? poster}`} />
                                     <CastCharacter>  {cast.character}</CastCharacter>
                                     <CastName>{cast.name}</CastName>
                                 </CastCard>
