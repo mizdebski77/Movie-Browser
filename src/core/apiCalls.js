@@ -7,9 +7,9 @@ const makeApiCall = async (url) => {
     return await response.data;
 };
 
-export const GetPopularMovies = async (currentPage, query) => {
+export const GetPopularMovies = async (currentPage) => {
 
-    return makeApiCall(`${moviesURL}?api_key=${apiKey}&page=${currentPage}&language=${apiLanguage}&query=${query}`);
+    return makeApiCall(`${moviesURL}?api_key=${apiKey}&page=${currentPage}&language=${apiLanguage}`);
 };
 
 export const GetGenres = async () => {
@@ -20,8 +20,8 @@ export const GetCredits = async (id) => {
     return makeApiCall(`${movieCreditsURL}/${id}/credits?api_key=${apiKey}&language=${apiLanguage}`);
 };
 
-export const GetPopularPeople = async () => {
-    return makeApiCall(`${peopleURL}?api_key=${apiKey}&page=${1}&language=${apiLanguage}`)
+export const GetPopularPeople = async (currentPage) => {
+    return makeApiCall(`${peopleURL}?api_key=${apiKey}&page=${currentPage}&language=${apiLanguage}`)
 };
 
 export const GetPeopleDetails = async (id) => {

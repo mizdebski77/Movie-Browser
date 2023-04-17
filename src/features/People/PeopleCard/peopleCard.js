@@ -5,8 +5,10 @@ import { useEffect } from 'react';
 import { Loader } from '../../../common/Loader/loader';
 import { Error } from '../../../common/Error/error';
 import { CardImage, Name, PersonCard, Wrapper } from './styledPeopleCard';
+import { selectPage } from '../../Movies/MovieCard/FetchPopularMovies/moviesSlice';
 
 export const PeopleCard = () => {
+    const page = useSelector(selectPage);
 
     const IMAGE_BASE_URL = 'https://image.tmdb.org/t/p/w500';
 
@@ -15,8 +17,8 @@ export const PeopleCard = () => {
     const status = useSelector(selectStatus);
 
     useEffect(() => {
-        dispatch(fetchPeople());
-    }, [dispatch]);
+        dispatch(fetchPeople(page));
+    }, [dispatch, page]);
 
     return (
         <>
