@@ -27,11 +27,10 @@ import {
 } from './styledDetails';
 import { useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { selectPage } from '../FetchPopularMovies/moviesSlice';
 import { Loader } from '../../../../common/Loader/loader';
 import { Error } from '../../../../common/Error/error';
 import star from '../../../../common/Images/star.svg'
-import { fetchGenre, selectGenre } from '../FetchGenres/genreSlice';
+import { fetchGenre } from '../FetchGenres/genreSlice';
 import { fetchCredits, selectCast } from './FetchCredits/creditsSlice';
 import { IMAGE_BASE_URL } from '../../../../core/apiData';
 import { fetchMovieDetails, selectDetailsState, selectMovieDetails } from './FetchMovieDetails/movieDetailsSlice';
@@ -42,11 +41,9 @@ export const Details = () => {
     const status = useSelector(selectDetailsState);
 
     const movie = useSelector(selectMovieDetails);
-    const genres = useSelector(selectGenre);
     const credits = useSelector(selectCast);
     const backDrop = `${IMAGE_BASE_URL}${movie.backdrop_path}`;
     const poster = `${IMAGE_BASE_URL}${movie.poster_path}`
-
 
 
     useEffect(() => {
@@ -54,15 +51,6 @@ export const Details = () => {
         dispatch(fetchGenre());
         dispatch(fetchCredits(id));
     }, [dispatch, id]);
-
-
-
-
-
-    const getGenreName = (genreID) => {
-        const genre = genres.find((genre) => genre.id === genreID);
-        return genre ? genre.name : "";
-    };
 
 
     return (
