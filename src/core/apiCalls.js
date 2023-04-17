@@ -8,7 +8,6 @@ const makeApiCall = async (url) => {
 };
 
 export const GetPopularMovies = async (currentPage) => {
-
     return makeApiCall(`${moviesURL}?api_key=${apiKey}&page=${currentPage}&language=${apiLanguage}`);
 };
 

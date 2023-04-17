@@ -54,7 +54,7 @@ export const Details = () => {
         dispatch(fetchMovies(page));
         dispatch(fetchGenre());
         dispatch(fetchCredits(id));
-    }, [dispatch, id, page]);
+    }, [dispatch, id]);
 
 
 
@@ -64,9 +64,6 @@ export const Details = () => {
         const genre = genres.find((genre) => genre.id === genreId);
         return genre ? genre.name : "";
     };
-
-
-
 
 
     return (

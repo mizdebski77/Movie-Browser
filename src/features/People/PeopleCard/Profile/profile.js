@@ -33,8 +33,6 @@ export const Profile = () => {
     };
 
 
-
-
     return (
         <>
             {status === "loading" ? <Loader /> : status === "error" ? <Error /> :

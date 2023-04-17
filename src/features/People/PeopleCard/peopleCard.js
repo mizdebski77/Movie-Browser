@@ -22,7 +22,6 @@ export const PeopleCard = () => {
         dispatch(fetchPeople(page));
     }, [dispatch, page]);
 
-    console.log(people);
 
     return (
         <>
