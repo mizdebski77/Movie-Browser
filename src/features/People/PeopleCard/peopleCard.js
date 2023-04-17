@@ -11,7 +11,6 @@ import { IMAGE_BASE_URL } from '../../../core/apiData';
 
 export const PeopleCard = () => {
     const dispatch = useDispatch();
-
     const location = useLocation();
     const query = (new URLSearchParams(location.search).get("search"));
     const page = useSelector(selectPage);
@@ -21,6 +20,7 @@ export const PeopleCard = () => {
     useEffect(() => {
         dispatch(fetchPeople(page));
     }, [dispatch, page]);
+
 
 
     return (

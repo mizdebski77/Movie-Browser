@@ -95,6 +95,11 @@ export const CastCard = styled(Link)`
     text-decoration: none;
     display: grid;
     gap: 16px;
+    transition: 0.5s;
+
+    &:hover{
+        transform: scale(1.03);
+    }
 
 `;
 

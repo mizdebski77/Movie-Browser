@@ -1,5 +1,5 @@
 import axios from "axios";
-import { moviesURL, apiKey, apiLanguage, genreURL, movieCreditsURL, peopleURL, peopleDetailsURL, personCreditsURL } from './apiData';
+import { moviesURL, apiKey, apiLanguage, genreURL, movieCreditsURL, peopleURL, peopleDetailsURL, personCreditsURL, moviesDetails } from './apiData';
 
 
 const makeApiCall = async (url) => {
@@ -9,6 +9,10 @@ const makeApiCall = async (url) => {
 
 export const GetPopularMovies = async (currentPage) => {
     return makeApiCall(`${moviesURL}?api_key=${apiKey}&page=${currentPage}&language=${apiLanguage}`);
+};
+
+export const GetMovieDetails = async (id) => {
+    return makeApiCall(`${moviesDetails}/${id}?api_key=${apiKey}&language=${apiLanguage}`);
 };
 
 export const GetGenres = async () => {

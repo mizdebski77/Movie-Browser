@@ -8,16 +8,15 @@ import { Loader } from '../../../common/Loader/loader';
 import { Error } from '../../../common/Error/error';
 import { fetchGenre, selectGenre } from './FetchGenres/genreSlice';
 import { useLocation } from 'react-router-dom';
+import { IMAGE_BASE_URL } from '../../../core/apiData';
 
 export const MovieCard = () => {
-    const IMAGE_BASE_URL = 'https://image.tmdb.org/t/p/w500';
     const dispatch = useDispatch();
-
     const location = useLocation();
     const query = (new URLSearchParams(location.search).get("search"));
-    const status = useSelector(selectStatus);
     const movies = useSelector((state) => selectMoviesByQuery(state, query));
     const genres = useSelector(selectGenre);
+    const status = useSelector(selectStatus);
     const page = useSelector(selectPage);
 
 
@@ -25,6 +24,7 @@ export const MovieCard = () => {
         dispatch(fetchMovies(page));
         dispatch(fetchGenre());
     }, [dispatch, page]);
+
 
     const getGenreName = (genreId) => {
         const genre = genres.find((genre) => genre.id === genreId);

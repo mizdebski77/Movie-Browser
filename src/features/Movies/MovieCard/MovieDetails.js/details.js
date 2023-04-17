@@ -27,31 +27,30 @@ import {
 } from './styledDetails';
 import { useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchMovies, getDetailsByID, selectPage, selectStatus } from '../FetchPopularMovies/moviesSlice';
+import { selectPage } from '../FetchPopularMovies/moviesSlice';
 import { Loader } from '../../../../common/Loader/loader';
 import { Error } from '../../../../common/Error/error';
 import star from '../../../../common/Images/star.svg'
 import { fetchGenre, selectGenre } from '../FetchGenres/genreSlice';
 import { fetchCredits, selectCast } from './FetchCredits/creditsSlice';
 import { IMAGE_BASE_URL } from '../../../../core/apiData';
+import { fetchMovieDetails, selectDetailsState, selectMovieDetails } from './FetchMovieDetails/movieDetailsSlice';
 
 export const Details = () => {
-
-
+    const dispatch = useDispatch();
     const { id } = useParams();
-    const movie = useSelector(state => getDetailsByID(state, id));
-    const status = useSelector(selectStatus);
+    const status = useSelector(selectDetailsState);
+
+    const movie = useSelector(selectMovieDetails);
     const genres = useSelector(selectGenre);
     const credits = useSelector(selectCast);
-    const backDrop = movie ? `${IMAGE_BASE_URL}${movie.backdrop_path}` : '';
-    const poster = movie ? `${IMAGE_BASE_URL}${movie.poster_path}` : '';
-    const dispatch = useDispatch();
-    const page = useSelector(selectPage);
+    const backDrop = `${IMAGE_BASE_URL}${movie.backdrop_path}`;
+    const poster = `${IMAGE_BASE_URL}${movie.poster_path}`
 
 
 
     useEffect(() => {
-        dispatch(fetchMovies(page));
+        dispatch(fetchMovieDetails(id));
         dispatch(fetchGenre());
         dispatch(fetchCredits(id));
     }, [dispatch, id]);
@@ -60,8 +59,8 @@ export const Details = () => {
 
 
 
-    const getGenreName = (genreId) => {
-        const genre = genres.find((genre) => genre.id === genreId);
+    const getGenreName = (genreID) => {
+        const genre = genres.find((genre) => genre.id === genreID);
         return genre ? genre.name : "";
     };
 
@@ -87,9 +86,10 @@ export const Details = () => {
                                 <TextDetails> Relase: <Span> {" "}{movie.release_date} </Span> </TextDetails>
                                 <TextDetails> Language: <Span change="true"> {" "}{movie.original_language} </Span> </TextDetails>
                                 <GenreContainer>
-                                    {movie.genre_ids.map((genre) => (
-                                        <Genre key={genre}>{getGenreName(genre)}</Genre>
+                                    {movie.genres.map((genre) => (
+                                        <Genre key={genre.id}>{genre.name}</Genre>
                                     ))}
+
                                 </GenreContainer>
 
                                 <TextDetails><Star change="true" src={star} />  <Span> {" "}{movie.vote_average} / 10  </Span> </TextDetails>

@@ -5,6 +5,7 @@ import { genresSaga } from "../features/Movies/MovieCard/FetchGenres/genreSaga";
 import { profileSaga } from "../features/People/PeopleCard/Profile/FetchPeopleDetails/profileSaga";
 import { creditsSaga } from "../features/Movies/MovieCard/MovieDetails.js/FetchCredits/creditsSaga";
 import { personCreditsSaga } from "../features/People/PeopleCard/Profile/FetchCredits/creditsSaga";
+import { movieDetailsSaga } from "../features/Movies/MovieCard/MovieDetails.js/FetchMovieDetails/movieDetailsSaga";
 
 export default function* rootSaga() {
     yield all([
@@ -14,5 +15,6 @@ export default function* rootSaga() {
         profileSaga(),
         creditsSaga(),
         personCreditsSaga(),
+        movieDetailsSaga(),
     ])
 }

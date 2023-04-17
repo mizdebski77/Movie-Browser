@@ -8,16 +8,15 @@ import { fetchProfile, selectProfile, selectProfileStatus } from './FetchPeopleD
 import { fetchPersonCredits } from './FetchCredits/creditsSlice';
 import { selectCast } from './FetchCredits/creditsSlice';
 import { fetchGenre, selectGenre } from '../../../Movies/MovieCard/FetchGenres/genreSlice';
+import { IMAGE_BASE_URL } from '../../../../core/apiData';
 
 
 export const Profile = () => {
-    const imageBackdropURL = 'https://image.tmdb.org/t/p/original';
-
-    const { id } = useParams();
     const dispatch = useDispatch();
+    const { id } = useParams();
     const status = useSelector(selectProfileStatus);
     const profile = useSelector(selectProfile);
-    const poster = `${imageBackdropURL}${profile.profile_path}`;
+    const poster = `${IMAGE_BASE_URL}${profile.profile_path}`;
     const cast = useSelector(selectCast)
     const genres = useSelector(selectGenre);
 
@@ -31,6 +30,7 @@ export const Profile = () => {
         const genre = genres.find((genre) => genre.id === genreID);
         return genre ? genre.name : "";
     };
+
 
 
     return (
@@ -57,8 +57,8 @@ export const Profile = () => {
 
                     <CastWrapper>
                         {cast && cast.map((movie) => (
-                            <CastCard key={movie.id} to={`/movies/${movie.id}`}>
-                                <CastImage src={`${imageBackdropURL}${movie.poster_path ?? poster}`} />
+                            <CastCard onClick={() => window.scrollTo(0, 0)} key={movie.id} to={`/movies/${movie.id}`}>
+                                <CastImage src={`${IMAGE_BASE_URL}${movie.poster_path ?? poster}`} />
                                 <CastTitle>{movie.original_title}</CastTitle>
                                 <CastYear>{new Date(movie.release_date).getFullYear()}</CastYear>
                                 <CastGenresWrapper>
