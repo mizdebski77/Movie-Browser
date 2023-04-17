@@ -7,9 +7,9 @@ import { Error } from '../../../common/Error/error';
 import { CardImage, Name, PersonCard, Wrapper } from './styledPeopleCard';
 import { selectPage } from '../../Movies/MovieCard/FetchPopularMovies/moviesSlice';
 import { useLocation } from 'react-router-dom';
+import { IMAGE_BASE_URL } from '../../../core/apiData';
 
 export const PeopleCard = () => {
-    const IMAGE_BASE_URL = 'https://image.tmdb.org/t/p/w500';
     const dispatch = useDispatch();
 
     const location = useLocation();

@@ -11,6 +11,7 @@ import { useLocation } from 'react-router-dom';
 
 export const MovieCard = () => {
     const IMAGE_BASE_URL = 'https://image.tmdb.org/t/p/w500';
+    const dispatch = useDispatch();
 
     const location = useLocation();
     const query = (new URLSearchParams(location.search).get("search"));
@@ -20,7 +21,6 @@ export const MovieCard = () => {
     const page = useSelector(selectPage);
 
 
-    const dispatch = useDispatch();
     useEffect(() => {
         dispatch(fetchMovies(page));
         dispatch(fetchGenre());
