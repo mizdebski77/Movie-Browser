@@ -37,6 +37,18 @@ export const getProfileByID = (state, personID) => {
         return people.find(person => person.id === parseInt(personID));
     }
     return undefined;
+};
+
+export const selecPeopleByQuery = (state, query) => {
+    const people = selectPeople(state);
+
+    if (!query || query.trim() === "") {
+        return people;
+    }
+
+    return people.filter(({ name }) =>
+        name.toUpperCase().includes(query.trim().toUpperCase())
+    );
 }
 
 

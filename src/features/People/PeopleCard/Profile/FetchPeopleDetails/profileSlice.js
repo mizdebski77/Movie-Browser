@@ -29,5 +29,4 @@ export const selectProfileState = state => state.profile;
 export const selectProfile = state => selectProfileState(state).profile;
 export const selectProfileStatus = state => selectProfileState(state).status;
 
-
 export default profileSlice.reducer;
