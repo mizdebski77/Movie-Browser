@@ -24,7 +24,7 @@ export const Search = () => {
     return (
         <Wrapper>
             <Image src={search} />
-            <Input value={query || ""} onChange={onInputChange} placeholder='Search for movies' />
+            <Input value={query || ""} onChange={onInputChange} placeholder={location.pathname.includes("people") ? "Search for people" : "Search for movies"} />
         </Wrapper>
 
     );
