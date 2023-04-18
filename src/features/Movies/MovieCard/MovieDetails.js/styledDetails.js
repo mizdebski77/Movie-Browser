@@ -42,14 +42,6 @@ export const Title = styled.h1`
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 `;
 
-export const Star = styled(SVG)`
-    width: 40px;
-
-    ${({ change }) => change && css`
-        width: 24px;
-    `}; 
-`;
-
 export const RaitingWrapper = styled.h1`
     display: flex;
     margin: 0 40px 64px 40px;
@@ -59,28 +51,32 @@ export const RaitingWrapper = styled.h1`
     align-items: center;
 `;
 
+export const Star = styled(SVG)`
+    width: 40px;
+
+    ${({ change }) => change && css`
+        width: 24px;
+    `}; 
+`;
+
 export const DetailsWrapper = styled.div`
     max-width: 1200px;
-    margin: 40px auto;
-    padding: 16px;
+    margin: 0 auto;
+    padding: 0 16px;
 `;
 
 export const DetailsTitle = styled.h1`
     color: ${({ theme }) => theme.color.secondColor};
-
-    ${({ cast }) => cast && css`
-        margin: 40px 0;
-    `};
+    margin: 40px 0;
 `;
 
 export const DetailsCard = styled.div`
     background: ${({ theme }) => theme.color.secondColor};
-    padding: 40px;
+    padding: 32px;
     border-radius: 10px;
     box-shadow: ${boxShadow};
     display: grid;
-    grid-template-columns: 1fr 2fr;
-    justify-content: center;
+    grid-template-columns: auto 2fr;
     text-align: center;
     gap: 40px;
 `;

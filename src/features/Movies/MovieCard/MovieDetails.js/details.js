@@ -89,7 +89,7 @@ export const Details = () => {
                             </InformationsWrapper>
                         </DetailsCard>
 
-                        <DetailsTitle cast>Full Cast</DetailsTitle>
+                        <DetailsTitle>Full Cast</DetailsTitle>
 
                         <CastWrapper>
                             {credits && credits.map((cast) => (
