@@ -4,7 +4,7 @@ import { fetchMovieDetails, fetchMovieDetailsError, fetchMovieDetailsSuccess } f
 
 function* fetchMovieDetailsHandler(action) {
     try {
-        yield delay(500);
+        yield delay(1000);
         const movie = yield call(GetMovieDetails, action.payload);
         yield put(fetchMovieDetailsSuccess(movie));
     } catch (error) {

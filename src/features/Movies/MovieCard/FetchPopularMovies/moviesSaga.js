@@ -4,7 +4,7 @@ import { call, delay, put, takeLatest } from "redux-saga/effects";
 
 function* fetchMoviesHandler(action) {
     try {
-        yield delay(500);
+        yield delay(1000);
         const movies = yield call(GetPopularMovies, action.payload);
         yield put(fetchMoviesSuccess(movies));
     } catch (error) {

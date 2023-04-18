@@ -1,4 +1,4 @@
-import { call, delay, put, takeLatest } from "redux-saga/effects";
+import { call, put, takeLatest } from "redux-saga/effects";
 import { GetCredits } from "../../../../../core/apiCalls";
 import { fetchCredits, fetchCreditsError, fetchCreditsSuccess } from "./creditsSlice";
 
