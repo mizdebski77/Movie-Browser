@@ -9,16 +9,6 @@ export const Wrapper = styled.main`
     gap: 28px;
     padding: 10px;
     margin-bottom: 32px;
-
-    @media (max-width:${({ theme }) => theme.breakPoint.firstBreakPoint}px){
-        grid-template-columns: repeat(3, 1fr);
-        gap: 20px;
-    }
-
-    @media (max-width:${({ theme }) => theme.breakPoint.mobileMax}px){
-        grid-template-columns: none;
-        gap: 16px;
-    }
 `;
 
 export const MovieCardWrapper = styled(Link)`
@@ -35,10 +25,6 @@ export const MovieCardWrapper = styled(Link)`
     &:hover {
         transform: scale(1.03);
     }
-
-    @media (max-width:${({ theme }) => theme.breakPoint.mobileMax}px){
-        display: flex;
-    }
 `;
 
 export const Informations = styled.div`
@@ -50,10 +36,6 @@ export const CardImage = styled.img`
     width: 100%;
     box-shadow: 0 0 10px white;
     border-radius: 10px;
-    
-    @media (max-width:${({ theme }) => theme.breakPoint.mobileMax}px){
-        width: 40%;
-    }
 `;
 
 export const MovieTitle = styled.h2`
@@ -62,22 +44,11 @@ export const MovieTitle = styled.h2`
     font-size: 20px;
     margin: 16px 0 0 0;
     font-weight: normal;
-
-    @media (max-width:${({ theme }) => theme.breakPoint.mobileMax}px){
-        font-size: 16px;
-        margin: 0;
-        text-align: center;
-    }
 `;
 
 export const MovieYear = styled.div`
     margin: 20px 0 10px 0;
     color:${({ theme }) => theme.color.fontSecondary};
-
-    @media (max-width:${({ theme }) => theme.breakPoint.mobileMax}px){
-        font-size: 12px;
-        text-align: center;
-    }
 `;
 
 export const GenreWrapper = styled.div`
@@ -87,10 +58,6 @@ export const GenreWrapper = styled.div`
     gap: 10px;
     font-size: 12px;
     align-items: center;
-
-    @media (max-width:${({ theme }) => theme.breakPoint.mobileMax}px){
-        font-size: 10px;
-    }
 `;
 
 export const Genre = styled.div`
@@ -108,11 +75,6 @@ export const Raiting = styled.h3`
     margin: 20px 0 0 0;
     color: ${({ theme }) => theme.color.fontSecondary};
     font-weight: normal;
-
-    @media (max-width:${({ theme }) => theme.breakPoint.mobileMax}px){
-        font-size: 12px;
-        justify-content: center;
-    }
 `;
 
 export const Star = styled(SVG)`

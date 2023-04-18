@@ -16,7 +16,7 @@ export const Buttons = () => {
 
     return (
         <Wrapper>
-            <Button disabled={currentPage === 1} onClick={() => dispatch(setPage(1)) && window.scrollTo(0, 0)}><Arrows src={leftArrow} />First</Button>
+            {/* <Button disabled={currentPage === 1} onClick={() => dispatch(setPage(1)) && window.scrollTo(0, 0)}><Arrows src={leftArrow} />First</Button>
             <Button disabled={currentPage === 1} onClick={() => dispatch(setPage(currentPage - 1)) && window.scrollTo(0, 0)}><Arrows src={leftArrow} />Previous</Button>
             <Page>Page {currentPage} of {lastPageNumber}</Page>
             <Button disabled={currentPage === lastPageNumber} onClick={() => dispatch(setPage(currentPage + 1)) && window.scrollTo(0, 0)}>Next<Arrows src={rightArrow} /></Button>
@@ -25,7 +25,7 @@ export const Buttons = () => {
                 top: 0,
                 behavior: 'smooth',
             })}> Scroll to top
-            </Button>
+            </Button> */}
         </Wrapper >
     );
 };
