@@ -7,7 +7,6 @@ export const Wrapper = styled.main`
 `;
 
 export const Title = styled.h1`
-    padding: 20px 0 0 10px;
-    margin-bottom: 64px;
-    color: ${({theme}) => theme.color.secondColor};
+    margin: 64px 0 64px 10px;
+    color: ${({ theme }) => theme.color.secondColor};
 `;
