@@ -4,7 +4,7 @@ import { GetPopularPeople } from "../../../../core/apiCalls";
 
 function* fetchPeopleHandler(action) {
     try {
-        yield delay (1000);
+        yield delay (500);
         const people = yield call(GetPopularPeople, action.payload);
         yield put(fetchPeopleSuccess(people));
     } catch (error) {

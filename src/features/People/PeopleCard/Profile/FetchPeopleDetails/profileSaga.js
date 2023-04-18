@@ -4,7 +4,7 @@ import { GetPeopleDetails } from "../../../../../core/apiCalls";
 
 function* fetchProfileHandler(action) {
     try {
-        yield delay(1000);
+        yield delay(500);
         const profile = yield call(GetPeopleDetails, action.payload);
         yield put(fetchProfileSuccess(profile));
     } catch (error) {
