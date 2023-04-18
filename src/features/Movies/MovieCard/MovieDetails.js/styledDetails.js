@@ -112,6 +112,7 @@ export const DetailsCard = styled.div`
     @media (max-width:${({ theme }) => theme.breakPoint.mobileMax}px){
         padding: 16px;
         gap: 12px;
+        grid-template-columns: none;
     }
 `;
 
