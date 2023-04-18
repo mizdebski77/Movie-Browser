@@ -40,6 +40,11 @@ export const Title = styled.h1`
     font-size: 56px;
     margin: 40px;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+
+    @media (max-width:${({ theme }) => theme.breakPoint.mobileMax}px){
+        font-size:24px;
+        margin: 20px;
+    }
 `;
 
 export const Star = styled(SVG)`
@@ -48,6 +53,10 @@ export const Star = styled(SVG)`
     ${({ change }) => change && css`
         width: 24px;
     `}; 
+
+    @media (max-width:${({ theme }) => theme.breakPoint.mobileMax}px){
+        width: 20px;
+    }
 `;
 
 export const RaitingWrapper = styled.h1`
@@ -57,12 +66,22 @@ export const RaitingWrapper = styled.h1`
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     gap: 20px;
     align-items: center;
+
+    @media (max-width:${({ theme }) => theme.breakPoint.mobileMax}px){
+        font-size: 20px;
+        gap: 12px;
+        margin: 0 20px 32px 20px;
+    }
 `;
 
 export const DetailsWrapper = styled.div`
     max-width: 1200px;
     margin: 40px auto;
     padding: 16px;
+
+    @media (max-width:${({ theme }) => theme.breakPoint.mobileMax}px){
+        margin: 0 auto;
+    }
 
 `;
 
@@ -72,6 +91,11 @@ export const DetailsTitle = styled.h1`
     ${({ cast }) => cast && css`
         margin: 40px 0;
     `};
+
+    @media (max-width:${({ theme }) => theme.breakPoint.mobileMax}px){
+        font-size:16px;
+        margin: 0 0 20px 0
+    }
 `;
 
 export const DetailsCard = styled.div`
@@ -80,10 +104,15 @@ export const DetailsCard = styled.div`
     border-radius: 10px;
     box-shadow: ${boxShadow};
     display: grid;
-    grid-template-columns: auto 2fr;
+    grid-template-columns: 1fr 2fr;
     justify-content: center;
     text-align: center;
     gap: 40px;
+
+    @media (max-width:${({ theme }) => theme.breakPoint.mobileMax}px){
+        padding: 16px;
+        gap: 12px;
+    }
 `;
 
 export const DetailsImage = styled.img`
@@ -95,12 +124,17 @@ export const DetailsImage = styled.img`
 
 export const InformationsWrapper = styled.div`
     display: grid;
+    gap: 12px;
 `;
 
 export const Name = styled.h2`
     font-weight: normal;
     font-size: 36px;
     margin: 0;
+
+    @media (max-width:${({ theme }) => theme.breakPoint.mobileMax}px){
+        font-size:16px;
+    }
 `;
 
 export const TextDetails = styled.h3`
@@ -111,6 +145,10 @@ export const TextDetails = styled.h3`
     align-items: center;
     gap: 12px;
     font-size: 20px;
+
+    @media (max-width:${({ theme }) => theme.breakPoint.mobileMax}px){
+        font-size:12px;
+    }    
 `;
 
 export const Span = styled.span`
@@ -137,6 +175,10 @@ export const Genre = styled.div`
     padding: 10px;
     border-radius: 10px;
     color: ${({ theme }) => theme.color.fontSecondary};
+
+    @media (max-width:${({ theme }) => theme.breakPoint.mobileMax}px){
+        padding: 8px;
+    }
 `;
 
 export const OverviewWrapper = styled.div`
@@ -146,6 +188,11 @@ export const OverviewWrapper = styled.div`
 export const OverviewTitle = styled.h2`
     font-weight: normal;
     margin-bottom: 0;
+
+    @media (max-width:${({ theme }) => theme.breakPoint.mobileMax}px){
+        font-size:16px;
+        margin: 0;
+    }
 `;
 
 export const OverviewText = styled.h3`
@@ -153,6 +200,10 @@ export const OverviewText = styled.h3`
     font-weight: normal;
     text-align: left;
     font-weight: normal;
+
+    @media (max-width:${({ theme }) => theme.breakPoint.mobileMax}px){
+        font-size:12px;
+    }
 `;
 
 export const CastWrapper = styled.section`
@@ -161,6 +212,10 @@ export const CastWrapper = styled.section`
     gap: 16px;
     margin: auto;
     max-width: 1200px;
+
+    @media (max-width:${({ theme }) => theme.breakPoint.mobileMax}px){
+        grid-template-columns: 1fr 1fr;
+    }
 `;
 
 export const CastCard = styled(Link)`
@@ -192,6 +247,10 @@ export const CastName = styled.h1`
     color: ${({ theme }) => theme.color.fontSecondary};
     font-size: 20px;
     font-weight: normal;
+
+    @media (max-width:${({ theme }) => theme.breakPoint.mobileMax}px){
+        font-size:12px;
+    }
 `;
 
 export const CastCharacter = styled.h1`
@@ -199,6 +258,10 @@ export const CastCharacter = styled.h1`
     color: ${({ theme }) => theme.color.fontPrimary};
     font-size: 24px;
     font-weight: normal;
+
+    @media (max-width:${({ theme }) => theme.breakPoint.mobileMax}px){
+        font-size:16px;
+    }
 `;
 
 

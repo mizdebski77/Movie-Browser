@@ -43,7 +43,7 @@ export const MovieCardWrapper = styled(Link)`
 
 export const Informations = styled.div`
     padding: 0 0 0 20px;
-        display: grid;
+    display: grid;
 `;
 
 export const CardImage = styled.img`
