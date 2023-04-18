@@ -1,19 +1,18 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import { boxShadow } from "../../../core/theme";
+import { boxShadow, whiteShadow } from "../../../core/theme";
 import SVG from "react-inlinesvg";
 
 export const Wrapper = styled.main`
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 28px;
+    gap: 24px;
     padding: 10px;
     margin-bottom: 32px;
 `;
 
 export const MovieCardWrapper = styled(Link)`
     text-decoration: none;
-    width: 100%;
     background: ${({ theme }) => theme.color.secondColor};
     display: grid;
     padding: 16px;
@@ -28,36 +27,39 @@ export const MovieCardWrapper = styled(Link)`
 `;
 
 export const Informations = styled.div`
-    padding: 0 0 0 20px;
     display: grid;
+    gap: 16px;
+    align-items: center;
 `;
 
 export const CardImage = styled.img`
     width: 100%;
-    box-shadow: 0 0 10px white;
+    max-height: 443px;
+    box-shadow: ${whiteShadow};
     border-radius: 10px;
+    margin-bottom: 20px;
 `;
 
 export const MovieTitle = styled.h2`
     color: ${({ theme }) => theme.color.fontPrimary};
     text-align: center;
     font-size: 20px;
-    margin: 16px 0 0 0;
+    margin: 0;
     font-weight: normal;
 `;
 
 export const MovieYear = styled.div`
-    margin: 20px 0 10px 0;
+    margin: 0;
     color:${({ theme }) => theme.color.fontSecondary};
 `;
 
 export const GenreWrapper = styled.div`
-    margin: 16px 0 0 0;
+    min-height: 80px;
     display: flex;
     flex-wrap: wrap;
+    align-items:flex-start;
     gap: 10px;
     font-size: 12px;
-    align-items: center;
 `;
 
 export const Genre = styled.div`
@@ -72,12 +74,12 @@ export const Raiting = styled.h3`
     justify-content: flex-end;
     align-items: center;
     font-size: 16px;
-    margin: 20px 0 0 0;
+    margin: 0;
+    gap: 16px;
     color: ${({ theme }) => theme.color.fontSecondary};
     font-weight: normal;
 `;
 
 export const Star = styled(SVG)`
-    margin-right: 16px;
     width: 20px;
 `;

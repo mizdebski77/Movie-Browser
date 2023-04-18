@@ -7,6 +7,6 @@ export const Wrapper = styled.main`
 `;
 
 export const Title = styled.h1`
-    margin: 64px 0 64px 10px;
+    margin: 48px 0 48px 10px;
     color: ${({ theme }) => theme.color.secondColor};
 `;
