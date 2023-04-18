@@ -6,9 +6,10 @@ import { People } from "../features/People/people";
 import { Details } from "../features/Movies/MovieCard/MovieDetails.js/details";
 import { Profile } from "../features/People/PeopleCard/Profile/profile";
 
+
 function App() {
   return (
-    <HashRouter basename="/movie-browser">
+    <HashRouter >
       <Navigation />
       <Switch>
         <Route exact path="/movies"><Movies /></Route>

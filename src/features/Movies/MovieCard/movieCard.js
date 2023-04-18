@@ -16,14 +16,11 @@ export const MovieCard = () => {
     const status = useSelector(selectStatus);
     const page = useSelector(selectPage);
 
-
-
     useEffect(() => {
         dispatch(fetchMovies(page));
         dispatch(fetchGenre());
     }, [dispatch, page]);
 
-    console.log(movies);
 
     const getGenreName = (genreId) => {
         const genre = genres.find((genre) => genre.id === genreId);
