@@ -44,16 +44,4 @@ export const getDetailsByID = (state, movieID) => {
     return undefined;
 };
 
-export const selectMoviesByQuery = (state, query) => {
-    const movies = selectMovies(state);
-
-    if (!query || query.trim() === "") {
-        return movies;
-    }
-    return movies.filter(({ original_title }) =>
-        original_title.toUpperCase().includes(query.trim().toUpperCase())
-    );
-
-};
-
 export default moviesSlice.reducer;

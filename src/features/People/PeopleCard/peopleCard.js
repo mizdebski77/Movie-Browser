@@ -1,20 +1,17 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchPeople, selecPeopleByQuery, selectStatus } from './FetchPeople/peopleSlice';
+import { fetchPeople, selectPeople, selectStatus } from './FetchPeople/peopleSlice';
 import { useEffect } from 'react';
 import { Loader } from '../../../common/Loader/loader';
 import { Error } from '../../../common/Error/error';
 import { CardImage, Name, PersonCard, Wrapper } from './styledPeopleCard';
 import { selectPage } from '../../Movies/MovieCard/FetchPopularMovies/moviesSlice';
-import { useLocation } from 'react-router-dom';
 import { IMAGE_BASE_URL } from '../../../core/apiData';
 
 export const PeopleCard = () => {
     const dispatch = useDispatch();
-    const location = useLocation();
-    const query = (new URLSearchParams(location.search).get("search"));
     const page = useSelector(selectPage);
-    const people = useSelector((state) => selecPeopleByQuery(state, query));
+    const people = useSelector(selectPeople);
     const status = useSelector(selectStatus);
 
     useEffect(() => {
