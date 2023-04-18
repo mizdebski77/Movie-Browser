@@ -8,17 +8,20 @@ export const Wrapper = styled.section`
     min-height: 100vh;
 `;
 
+export const Title = styled.h1`
+    color: ${({ theme }) => theme.color.secondColor};
+    margin: 40px 0;
+`;
+
 export const Card = styled.div`
     background: ${({ theme }) => theme.color.secondColor};
-    padding: 40px;
+    padding: 32px;
     border-radius: 10px;
     box-shadow: ${boxShadow};
     display: grid;
-    grid-template-columns: auto 1fr;
-    justify-content: center;
+    grid-template-columns: auto 2fr;
     text-align: center;
     gap: 40px;
-    margin: 40px auto;
 `;
 
 export const Image = styled.img`
@@ -30,7 +33,7 @@ export const Image = styled.img`
 
 export const InformationsWrapper = styled.div`
     display: grid;
-    gap: 20px;
+    gap: 12px;
 `;
 
 export const Name = styled.h2`
@@ -40,7 +43,7 @@ export const Name = styled.h2`
 `;
 
 export const TextDetails = styled.h3`
-    margin:  0;
+    margin: 0;
     text-align: left;
     font-weight: normal;
     display: flex;
@@ -57,7 +60,6 @@ export const Span = styled.span`
     `};     
 `;
 
-
 export const OverviewWrapper = styled.div`
     display: grid;
 `;
@@ -65,14 +67,6 @@ export const OverviewWrapper = styled.div`
 export const OverviewTitle = styled.h2`
     font-weight: normal;
     margin-bottom: 0;
-`;
-
-export const Title = styled.h1`
-    color: ${({ theme }) => theme.color.secondColor};
-
-    ${({ cast }) => cast && css`
-        margin: 40px 0;
-    `};
 `;
 
 export const OverviewText = styled.h3`
@@ -115,7 +109,7 @@ export const CastImage = styled.img`
 export const CastTitle = styled.h1`
     color: ${({ theme }) => theme.color.fontPrimary};
     font-weight: normal;
-    font-size: 24px;
+    font-size: 20px;
     margin: 0;
     text-align: center;
 `;

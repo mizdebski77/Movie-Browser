@@ -111,6 +111,7 @@ export const TextDetails = styled.h3`
 
 export const Span = styled.span`
     color: ${({ theme }) => theme.color.fontSecondary};
+    
     ${({ change }) => change && css`
         text-transform: uppercase;
     `};     
