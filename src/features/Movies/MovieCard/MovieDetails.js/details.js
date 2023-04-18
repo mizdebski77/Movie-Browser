@@ -61,7 +61,7 @@ export const Details = () => {
                     <TitleWrapper backDrop={backDrop}>
                         <ImageWrapper backDrop={backDrop}>
                             <Title>{movie.title}</Title>
-                            <RaitingWrapper><Star src={star} />{movie.vote_average}</RaitingWrapper>
+                            <RaitingWrapper><Star src={star} />{movie.vote_average.toFixed(1)}</RaitingWrapper>
                         </ImageWrapper>
                     </TitleWrapper>
 
@@ -80,7 +80,7 @@ export const Details = () => {
 
                                 </GenreContainer>
 
-                                <TextDetails><Star change="true" src={star} />  <Span> {" "}{movie.vote_average} / 10  </Span> </TextDetails>
+                                <TextDetails><Star change="true" src={star} />  <Span> {" "}{movie.vote_average.toFixed(1)} / 10  </Span> </TextDetails>
 
                                 <OverviewWrapper>
                                     <OverviewTitle>Overview </OverviewTitle>

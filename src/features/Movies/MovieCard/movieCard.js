@@ -51,7 +51,7 @@ export const MovieCard = () => {
                             </GenreWrapper>
                             <Raiting>
                                 <Star src={star} />
-                                {movie.vote_average} / 10
+                                {movie.vote_average.toFixed(1)} / 10
                             </Raiting>
                         </Informations>
 
