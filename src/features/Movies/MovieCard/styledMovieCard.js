@@ -9,6 +9,18 @@ export const Wrapper = styled.main`
     gap: 24px;
     padding: 10px;
     margin-bottom: 32px;
+
+    @media (max-width:${({theme}) => theme.breakPoint.firstBreakPoint}px) {
+        grid-template-columns: repeat(3, 1fr);
+    };
+
+    @media (max-width:${({theme}) => theme.breakPoint.mobileMax}px) {
+        grid-template-columns: repeat(2, 1fr);
+    };
+
+    @media (max-width:${({theme}) => theme.breakPoint.smallPhone}px) {
+        grid-template-columns: none;
+    };
 `;
 
 export const MovieCardWrapper = styled(Link)`
@@ -24,6 +36,11 @@ export const MovieCardWrapper = styled(Link)`
     &:hover {
         transform: scale(1.03);
     }
+
+    @media (max-width:${({theme}) => theme.breakPoint.smallPhone}px) {
+        display: flex;
+        gap: 20px;
+    };
 `;
 
 export const Informations = styled.div`
@@ -38,6 +55,11 @@ export const CardImage = styled.img`
     box-shadow: ${whiteShadow};
     border-radius: 10px;
     margin-bottom: 20px;
+
+    @media (max-width:${({theme}) => theme.breakPoint.smallPhone}px) {
+        width: 40%;
+        margin-bottom: 0;
+    };
 `;
 
 export const MovieTitle = styled.h2`
@@ -67,6 +89,10 @@ export const Genre = styled.div`
     padding: 10px;
     border-radius: 10px;
     color: ${({ theme }) => theme.color.fontSecondary};
+
+    @media (max-width: ${({theme}) => theme.breakPoint.smallPhone}px) {
+        padding: 8px;
+    }
 `;
 
 export const Raiting = styled.h3`
