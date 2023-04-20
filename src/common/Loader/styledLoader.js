@@ -15,11 +15,15 @@ export const Title = styled.h1`
     font-weight: normal;
     text-align: center;
     color: black;
+
+    @media (max-width: ${({ theme }) => theme.breakPoint.mobileMax}px) {
+        font-size: 24px;
+    }
 `;
 
 export const Spinner = styled(SVG)`
     margin: 0 auto ;
-    stroke: ${({theme}) => theme.color.secondColor};
+    stroke: ${({ theme }) => theme.color.secondColor};
     animation: spinner 1.5s linear infinite;
     @keyframes spinner {
         0% {

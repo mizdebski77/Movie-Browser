@@ -16,6 +16,10 @@ export const Title = styled.h1`
     font-weight: normal;
     text-align: center;
     color: black;
+
+    @media (max-width: ${({ theme }) => theme.breakPoint.mobileMax}px) {
+        font-size: 24px;
+    }
 `;
 
 export const Image = styled(SVG)`
