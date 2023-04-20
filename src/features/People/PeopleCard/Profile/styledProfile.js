@@ -6,6 +6,7 @@ export const Wrapper = styled.section`
     max-width: 1300px;
     margin: 0 auto;
     min-height: 100vh;
+    padding: 10px;
 `;
 
 export const Title = styled.h1`
@@ -143,7 +144,6 @@ export const CastWrapper = styled.section`
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 16px;
-    padding: 10px;
 
     @media (max-width:${({ theme }) => theme.breakPoint.firstBreakPoint}px) {
         grid-template-columns: repeat(3, 1fr);
