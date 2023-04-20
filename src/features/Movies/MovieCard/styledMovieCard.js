@@ -38,14 +38,15 @@ export const MovieCardWrapper = styled(Link)`
     &:hover {
         transform: scale(1.03);
 
-        @media (max-width:${({theme}) => theme.breakPoint.mobileMax}px) {
+     @media (max-width:${({theme}) => theme.breakPoint.mobileMax}px) {
         transform: scale(1);
     };
     }
 
     @media (max-width:${({theme}) => theme.breakPoint.smallPhone}px) {
         display: flex;
-        gap: 20px;
+        gap: 16px;
+        padding: 12px;
     };
 `;
 
@@ -53,6 +54,10 @@ export const Informations = styled.div`
     display: grid;
     gap: 16px;
     align-items: center;
+
+    @media (max-width:${({theme}) => theme.breakPoint.smallPhone}px) {
+        gap: 12px;
+    };
 `;
 
 export const CardImage = styled.img`
@@ -63,7 +68,8 @@ export const CardImage = styled.img`
     margin-bottom: 20px;
 
     @media (max-width:${({theme}) => theme.breakPoint.smallPhone}px) {
-        width: 40%;
+        max-width: 132px;
+        height: 180px;
         margin-bottom: 0;
     };
 `;
@@ -74,11 +80,19 @@ export const MovieTitle = styled.h2`
     font-size: 20px;
     margin: 0;
     font-weight: normal;
+
+    @media (max-width:${({theme}) => theme.breakPoint.smallPhone}px) {
+        font-size: 16px;
+    };
 `;
 
 export const MovieYear = styled.div`
     margin: 0;
     color:${({ theme }) => theme.color.fontSecondary};
+
+    @media (max-width:${({theme}) => theme.breakPoint.smallPhone}px) {
+        font-size: 12px;
+    };
 `;
 
 export const GenreWrapper = styled.div`
@@ -98,6 +112,7 @@ export const Genre = styled.div`
 
     @media (max-width: ${({theme}) => theme.breakPoint.smallPhone}px) {
         padding: 8px;
+        font-size: 12px;
     }
 `;
 
@@ -110,8 +125,17 @@ export const Raiting = styled.h3`
     gap: 16px;
     color: ${({ theme }) => theme.color.fontSecondary};
     font-weight: normal;
+
+    @media (max-width:${({theme}) => theme.breakPoint.smallPhone}px) {
+        font-size: 14px;
+        gap: 10px;
+    };
 `;
 
 export const Star = styled(SVG)`
     width: 20px;
+
+    @media (max-width:${({theme}) => theme.breakPoint.smallPhone}px) {
+        width: 14px;
+    };
 `;

@@ -11,6 +11,11 @@ export const Wrapper = styled.section`
 export const Title = styled.h1`
     color: ${({ theme }) => theme.color.secondColor};
     margin: 40px 0;
+
+    @media (max-width:${({theme}) => theme.breakPoint.smallPhone}px) {
+        margin: 20px 0 20px 10px;
+        font-size: 24px;
+    }
 `;
 
 export const Card = styled.div`

@@ -15,6 +15,18 @@ export const TitleWrapper = styled.div`
     position: relative;
     display: flex;
     justify-content: center;
+
+    @media (max-width:${({ theme }) => theme.breakPoint.firstBreakPoint}px) {
+        height: 660px;
+    };
+
+    @media (max-width:${({ theme }) => theme.breakPoint.mobileMax}px) {
+        height: 550px;
+    };
+
+    @media (max-width:${({ theme }) => theme.breakPoint.smallPhone}px) {
+        height: 240px;
+    };
 `;
 
 export const ImageWrapper = styled.div`
@@ -31,7 +43,14 @@ export const ImageWrapper = styled.div`
     box-shadow: inset 0px 60px 120px -15px #000, 
                 inset -100px 0px 120px -10px #000,
                 inset 100px 0px 120px -10px #000,
-                inset 0 -180px 180px -10px #000;
+                inset 0 -180px 180px -10px #000;   
+                
+    @media (max-width:${({ theme }) => theme.breakPoint.mobileMax}px) {
+        box-shadow: inset 0px 10px 80px -5px #000, 
+              inset -50px 0px 50px -50px #000,
+              inset 50px 0px 50px -50px #000,
+              inset 0 -100px 100px -50px #000;  
+    }
 `;
 
 export const Title = styled.h1`
@@ -40,15 +59,35 @@ export const Title = styled.h1`
     font-size: 56px;
     margin: 40px;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+
+    @media (max-width:${({ theme }) => theme.breakPoint.mobileMax}px) {
+        font-size: 24px;
+        margin: 0 20px 10px;
+    }
+
+    @media (max-width:${({ theme }) => theme.breakPoint.smallPhone}px) {
+        font-size: 20px;
+    }
 `;
 
 export const RaitingWrapper = styled.h1`
     display: flex;
-    margin: 0 40px 64px 40px;
+    margin: 0 40px 64px;
     color: white;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     gap: 20px;
     align-items: center;
+
+    @media (max-width:${({ theme }) => theme.breakPoint.mobileMax}px) {
+        margin: 0 20px 32px ;
+        font-size: 20px;
+        gap: 12px;
+    }
+
+    @media (max-width:${({ theme }) => theme.breakPoint.smallPhone}px) {
+        font-size: 16px;
+        gap: 8px;
+    }
 `;
 
 export const Star = styled(SVG)`
@@ -57,6 +96,14 @@ export const Star = styled(SVG)`
     ${({ change }) => change && css`
         width: 24px;
     `}; 
+
+    @media (max-width:${({ theme }) => theme.breakPoint.mobileMax}px) {
+        width:20px;
+    }
+
+    @media (max-width:${({ theme }) => theme.breakPoint.smallPhone}px) {
+        width: 16px;
+    }
 `;
 
 export const DetailsWrapper = styled.div`
@@ -68,6 +115,11 @@ export const DetailsWrapper = styled.div`
 export const DetailsTitle = styled.h1`
     color: ${({ theme }) => theme.color.secondColor};
     margin: 40px 0;
+
+    @media (max-width:${({ theme }) => theme.breakPoint.mobileMax}px) {
+        margin: 20px 0 20px 10px;
+        font-size: 24px;
+    }
 `;
 
 export const DetailsCard = styled.div`
@@ -79,6 +131,15 @@ export const DetailsCard = styled.div`
     grid-template-columns: auto 2fr;
     text-align: center;
     gap: 40px;
+
+    @media (max-width:${({ theme }) => theme.breakPoint.mobileMax}px) {
+        padding: 16px;
+        gap: 20px;
+    };
+
+    @media (max-width:${({ theme }) => theme.breakPoint.smallPhone}px) {
+        grid-template-columns: none ;
+    };
 `;
 
 export const DetailsImage = styled.img`
@@ -86,6 +147,15 @@ export const DetailsImage = styled.img`
     width: 100%;
     border-radius: 10px;
     box-shadow: ${whiteShadow};
+
+    @media (max-width:${({ theme }) => theme.breakPoint.mobileMax}px) {
+        margin: 0 auto;
+        max-width: 200px;
+    };  
+
+    @media (max-width:${({ theme }) => theme.breakPoint.smallPhone}px) {
+        max-width: 300px;
+    };      
 `;
 
 export const InformationsWrapper = styled.div`
@@ -97,6 +167,18 @@ export const Name = styled.h2`
     font-weight: normal;
     font-size: 36px;
     margin: 0;
+
+    @media (max-width:${({ theme }) => theme.breakPoint.firstBreakPoint}px) {
+        font-size: 28px;
+    }; 
+
+    @media (max-width:${({ theme }) => theme.breakPoint.mobileMax}px) {
+        font-size: 24px;
+    }; 
+
+    @media (max-width:${({ theme }) => theme.breakPoint.smallPhone}px) {
+        font-size: 20px;
+    }; 
 `;
 
 export const TextDetails = styled.h3`
@@ -107,6 +189,14 @@ export const TextDetails = styled.h3`
     align-items: center;
     gap: 12px;
     font-size: 20px;
+
+    @media (max-width:${({ theme }) => theme.breakPoint.firstBreakPoint}px) {
+        font-size: 16px;
+    }; 
+
+    @media (max-width:${({ theme }) => theme.breakPoint.mobileMax}px) {
+        font-size: 14px;
+    }; 
 `;
 
 export const Span = styled.span`
@@ -130,6 +220,10 @@ export const Genre = styled.div`
     padding: 10px;
     border-radius: 10px;
     color: ${({ theme }) => theme.color.fontSecondary};
+
+    @media (max-width:${({ theme }) => theme.breakPoint.mobileMax}px) {
+        padding: 6px;
+    }; 
 `;
 
 export const OverviewWrapper = styled.div`
@@ -139,6 +233,14 @@ export const OverviewWrapper = styled.div`
 export const OverviewTitle = styled.h2`
     font-weight: normal;
     margin-bottom: 0;
+
+    @media (max-width:${({ theme }) => theme.breakPoint.firstBreakPoint}px) {
+        font-size: 20px;
+    }; 
+
+    @media (max-width:${({ theme }) => theme.breakPoint.mobileMax}px) {
+        font-size: 16px;
+    }; 
 `;
 
 export const OverviewText = styled.h3`
@@ -146,6 +248,16 @@ export const OverviewText = styled.h3`
     font-weight: normal;
     text-align: left;
     font-weight: normal;
+    font-size: 20px;
+    margin-bottom: 0;
+
+    @media (max-width:${({ theme }) => theme.breakPoint.firstBreakPoint}px) {
+        font-size: 16px;
+    }; 
+
+    @media (max-width:${({ theme }) => theme.breakPoint.mobileMax}px) {
+        font-size: 14px;
+    }; 
 `;
 
 export const CastWrapper = styled.section`
@@ -154,6 +266,18 @@ export const CastWrapper = styled.section`
     gap: 16px;
     margin: auto;
     max-width: 1200px;
+
+    @media (max-width:${({ theme }) => theme.breakPoint.firstBreakPoint}px) {
+        grid-template-columns: repeat(4, 1fr);
+    }; 
+
+    @media (max-width:${({ theme }) => theme.breakPoint.mobileMax}px) {
+        grid-template-columns: repeat(3, 1fr);
+    }; 
+
+    @media (max-width:${({ theme }) => theme.breakPoint.smallPhone}px) {
+        grid-template-columns: repeat(2, 1fr);
+    }; 
 `;
 
 export const CastCard = styled(Link)`
@@ -166,6 +290,10 @@ export const CastCard = styled(Link)`
     text-align: center;
     text-decoration: none;
     transition: 0.5s;
+
+    @media (max-width:${({ theme }) => theme.breakPoint.firstBreakPoint}px) {
+        padding: 12px;
+    }; 
 
     &:hover{
         transform: scale(1.03);
@@ -180,18 +308,36 @@ export const CastImage = styled.img`
     box-shadow: ${whiteShadow};
 `;
 
-export const CastName = styled.h1`
-    margin: 0;
-    color: ${({ theme }) => theme.color.fontSecondary};
-    font-size: 20px;
-    font-weight: normal;
-`;
-
 export const CastCharacter = styled.h1`
     margin: 0;
     color: ${({ theme }) => theme.color.fontPrimary};
     font-size: 24px;
     font-weight: normal;
+
+    @media (max-width:${({ theme }) => theme.breakPoint.firstBreakPoint}px) {
+        font-size: 20px;
+    }; 
+
+    @media (max-width:${({ theme }) => theme.breakPoint.mobileMax}px) {
+        font-size: 16px;
+    }; 
 `;
+
+export const CastName = styled.h1`
+    margin: 0;
+    color: ${({ theme }) => theme.color.fontSecondary};
+    font-size: 20px;
+    font-weight: normal;
+
+    @media (max-width:${({ theme }) => theme.breakPoint.firstBreakPoint}px) {
+        font-size: 16px;
+    }; 
+
+    @media (max-width:${({ theme }) => theme.breakPoint.mobileMax}px) {
+        font-size: 14px;
+    }; 
+`;
+
+
 
 
