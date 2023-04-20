@@ -13,6 +13,7 @@ export const theme = {
         firstBreakPoint: 1150,
         mobileMax: 757,
         smallPhone: 550,
+        hideButtons:733,
     },
 }
 

@@ -7,6 +7,19 @@ export const Wrapper = styled.main`
     grid-template-columns: repeat(5, 1fr);
     gap: 28px;
     padding: 10px;
+
+    @media (max-width:${({theme}) => theme.breakPoint.firstBreakPoint}px) {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 16px;
+    };
+
+    @media (max-width:${({theme}) => theme.breakPoint.mobileMax}px) {
+        grid-template-columns: repeat(3, 1fr);
+    };
+
+    @media (max-width:${({theme}) => theme.breakPoint.smallPhone}px) {
+        grid-template-columns: repeat(2, 1fr);
+    };
 `;
 
 export const PersonCard = styled(Link)`
@@ -23,12 +36,15 @@ export const PersonCard = styled(Link)`
     &:hover {
         transform: scale(1.03);
     }
+    
 `;
 
 export const CardImage = styled.img`
     width: 100%;
     box-shadow: 0 0 10px white;
     border-radius: 10px;
+
+
 `;
 
 export const Name = styled.h2`
