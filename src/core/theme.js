@@ -12,8 +12,8 @@ export const theme = {
     breakPoint: {
         firstBreakPoint: 1150,
         mobileMax: 757,
+        hideButtons: 733,
         smallPhone: 550,
-        hideButtons:733,
     },
 }
 

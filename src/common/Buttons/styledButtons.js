@@ -71,6 +71,11 @@ export const Page = styled.h3`
        margin: 0;
        font-size: 16px;
     }
+
+    @media (max-width:${({ theme }) => theme.breakPoint.smallPhone}px){
+       margin: 0;
+       font-size: 12px;
+    }
 `;
 
 export const Arrows = styled(SVG)`
