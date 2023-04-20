@@ -22,6 +22,7 @@ export const MovieCard = () => {
     }, [dispatch, page]);
 
 
+
     const getGenreName = (genreId) => {
         const genre = genres.find((genre) => genre.id === genreId);
         return genre ? genre.name : "";

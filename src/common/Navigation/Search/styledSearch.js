@@ -20,8 +20,6 @@ export const Input = styled.input`
     outline: none;
     width: 100%;
     background: ${({theme}) => theme.color.mainColor};
-
-
 `;
 
 export const Image = styled(SVG)`

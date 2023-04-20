@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 
 export const Wrapper = styled.div`
     display: grid;
+    min-height: 100vh;
 `;
 
 export const TitleWrapper = styled.div`

@@ -1,4 +1,4 @@
-import { HashRouter, Redirect, Route, Switch } from "react-router-dom";
+import { HashRouter, Navigate, Route, Routes } from "react-router-dom";
 import { Navigation } from "../common/Navigation/navigation";
 import { Footer } from "../common/Footer/footer";
 import { Movies } from "../features/Movies/movies";
@@ -11,16 +11,15 @@ function App() {
   return (
     <HashRouter >
       <Navigation />
-      <Switch>
-        <Route exact path="/movies"><Movies /></Route>
-        <Route path="/people"><People /></Route>
-        <Route path="/movies/:id"><Details /></Route>
-        <Route path="/profile/:id"><Profile /></Route>
-        <Route path="/"><Redirect to="movies" /> </Route>
-
-      </Switch>
+      <Routes>
+        <Route path="/movies" element={<Movies />}></Route>
+        <Route path="/people" element={<People />}></Route>
+        <Route path="/movies/:id" element={<Details />}></Route>
+        <Route path="/profile/:id" element={<Profile />}></Route>
+        <Route path={"*"} element={<Navigate replace to="/movies" />}> </Route>
+      </Routes >
       <Footer />
-    </HashRouter>
+    </HashRouter >
   );
 }
 

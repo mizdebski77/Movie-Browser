@@ -15,7 +15,7 @@
     "react-dom": "^18.2.0",
     "react-inlinesvg": "^3.0.2",
     "react-redux": "^8.0.5",
-    "react-router-dom": "^5.3.3",
+    "react-router-dom": "^6.6.1",
     "react-scripts": "5.0.1",
     "react-svg": "^16.1.7",
     "redux-saga": "^1.2.3",

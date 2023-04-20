@@ -15,7 +15,7 @@ export const Navigation = () => {
                         <LogoImage src={logoImage} alt='Logo' />
                     </LogoWrapper>
                     <LinksWrapper>
-                        <Links onClick={() => dispatch(setPage(1)) && window.scrollTo(0, 0)} exact to="/movies">Movies</Links>
+                        <Links onClick={() => dispatch(setPage(1)) && window.scrollTo(0, 0)} to="/movies">Movies</Links>
                         <Links onClick={() => dispatch(setPage(1)) && window.scrollTo(0, 0)} to="/people">People</Links>
                     </LinksWrapper>
                 </LinksContainer>
