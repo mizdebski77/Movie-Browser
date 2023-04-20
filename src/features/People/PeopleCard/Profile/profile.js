@@ -9,6 +9,7 @@ import { fetchPersonCredits } from './FetchCredits/creditsSlice';
 import { selectCast } from './FetchCredits/creditsSlice';
 import { fetchGenre, selectGenre } from '../../../Movies/MovieCard/FetchGenres/genreSlice';
 import { IMAGE_BASE_URL } from '../../../../core/apiData';
+import { Informations } from '../../../Movies/MovieCard/styledMovieCard';
 
 
 export const Profile = () => {
@@ -59,13 +60,16 @@ export const Profile = () => {
                         {cast && cast.map((movie) => (
                             <CastCard onClick={() => window.scrollTo(0, 0)} key={movie.id} to={`/movies/${movie.id}`}>
                                 <CastImage src={`${IMAGE_BASE_URL}${movie.poster_path ?? poster}`} />
-                                <CastTitle>{movie.original_title}</CastTitle>
-                                <CastYear>{new Date(movie.release_date).getFullYear()}</CastYear>
-                                <CastGenresWrapper>
-                                    {movie.genre_ids.map((castGenre) => (
-                                        <Genre key={castGenre}>{getGenreName(castGenre)}</Genre>
-                                    ))}
-                                </CastGenresWrapper>
+                                <Informations>
+                                    <CastTitle>{movie.original_title}</CastTitle>
+                                    <CastYear>{new Date(movie.release_date).getFullYear()}</CastYear>
+                                    <CastGenresWrapper>
+                                        {movie.genre_ids.map((castGenre) => (
+                                            <Genre key={castGenre}>{getGenreName(castGenre)}</Genre>
+                                        ))}
+                                    </CastGenresWrapper>
+                                </Informations>
+
                             </CastCard>
                         ))};
 

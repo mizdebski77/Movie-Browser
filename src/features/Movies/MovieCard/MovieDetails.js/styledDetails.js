@@ -154,7 +154,7 @@ export const DetailsImage = styled.img`
     };  
 
     @media (max-width:${({ theme }) => theme.breakPoint.smallPhone}px) {
-        max-width: 300px;
+        max-width: 240px;
     };      
 `;
 

@@ -27,6 +27,17 @@ export const Card = styled.div`
     grid-template-columns: auto 2fr;
     text-align: center;
     gap: 40px;
+
+    @media (max-width:${({ theme }) => theme.breakPoint.mobileMax}px) {
+        padding: 16px;
+        gap: 20px;
+    };
+
+    @media (max-width:${({ theme }) => theme.breakPoint.smallPhone}px) {
+        grid-template-columns: none ;
+        padding: 16px;
+        gap: 20px;
+    };
 `;
 
 export const Image = styled.img`
@@ -34,6 +45,15 @@ export const Image = styled.img`
     width: 100%;
     border-radius: 10px;
     box-shadow: ${whiteShadow};
+
+    @media (max-width:${({ theme }) => theme.breakPoint.mobileMax}px) {
+        margin: 0 auto;
+        max-width: 200px;
+    };  
+
+    @media (max-width:${({ theme }) => theme.breakPoint.smallPhone}px) {
+        max-width: 240px;
+    }; 
 `;
 
 export const InformationsWrapper = styled.div`
@@ -45,6 +65,18 @@ export const Name = styled.h2`
     font-weight: normal;
     font-size: 36px;
     margin: 0;
+
+    @media (max-width:${({ theme }) => theme.breakPoint.firstBreakPoint}px) {
+        font-size: 28px;
+    }; 
+
+    @media (max-width:${({ theme }) => theme.breakPoint.mobileMax}px) {
+        font-size: 24px;
+    }; 
+
+    @media (max-width:${({ theme }) => theme.breakPoint.smallPhone}px) {
+        font-size: 20px;
+    }; 
 `;
 
 export const TextDetails = styled.h3`
@@ -55,6 +87,14 @@ export const TextDetails = styled.h3`
     align-items: center;
     gap: 12px;
     font-size: 20px;
+
+    @media (max-width:${({ theme }) => theme.breakPoint.firstBreakPoint}px) {
+        font-size: 16px;
+    }; 
+
+    @media (max-width:${({ theme }) => theme.breakPoint.mobileMax}px) {
+        font-size: 14px;
+    }; 
 `;
 
 export const Span = styled.span`
@@ -72,6 +112,14 @@ export const OverviewWrapper = styled.div`
 export const OverviewTitle = styled.h2`
     font-weight: normal;
     margin-bottom: 0;
+
+    @media (max-width:${({ theme }) => theme.breakPoint.firstBreakPoint}px) {
+        font-size: 20px;
+    }; 
+
+    @media (max-width:${({ theme }) => theme.breakPoint.mobileMax}px) {
+        font-size: 16px;
+    }; 
 `;
 
 export const OverviewText = styled.h3`
@@ -79,12 +127,35 @@ export const OverviewText = styled.h3`
     font-weight: normal;
     text-align: left;
     font-weight: normal;
+
+    @media (max-width:${({ theme }) => theme.breakPoint.firstBreakPoint}px) {
+        font-size: 16px;
+    }; 
+
+    @media (max-width:${({ theme }) => theme.breakPoint.mobileMax}px) {
+        font-size: 14px;
+    }; 
 `;
+
+
 
 export const CastWrapper = styled.section`
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 16px;
+    padding: 10px;
+
+    @media (max-width:${({ theme }) => theme.breakPoint.firstBreakPoint}px) {
+        grid-template-columns: repeat(3, 1fr);
+    }; 
+
+    @media (max-width:${({ theme }) => theme.breakPoint.mobileMax}px) {
+        grid-template-columns: repeat(2, 1fr);
+    }; 
+
+    @media (max-width:${({ theme }) => theme.breakPoint.smallPhone}px) {
+        grid-template-columns: none;
+    }; 
 `;
 
 export const CastCard = styled(Link)`
@@ -94,21 +165,36 @@ export const CastCard = styled(Link)`
     box-shadow: ${boxShadow};
     text-decoration: none;
     display: grid;
-    gap: 16px;
     transition: 0.5s;
+    gap: 16px;
 
     &:hover{
         transform: scale(1.03);
+
+        @media (max-width:${({theme}) => theme.breakPoint.mobileMax}px) {
+        transform: scale(1);
+    };
     }
+
+    @media (max-width:${({theme}) => theme.breakPoint.smallPhone}px) {
+        display: flex;
+        gap: 16px;
+        padding: 12px;
+    };
 `;
 
 export const CastImage = styled.img`
-    max-width: 300px;
     width: 100%;
+    height: 100%;
+    max-height: 410px;
     box-shadow: ${whiteShadow};
-    margin: 0 auto;
     border-radius: 10px;
-    min-height: 421px;
+
+    @media (max-width:${({theme}) => theme.breakPoint.smallPhone}px) {
+        max-width: 132px;
+        height: 180px;
+        margin-bottom: 0;
+    };
 `;
 
 export const CastTitle = styled.h1`
@@ -117,6 +203,10 @@ export const CastTitle = styled.h1`
     font-size: 20px;
     margin: 0;
     text-align: center;
+
+    @media (max-width:${({theme}) => theme.breakPoint.smallPhone}px) {
+        font-size: 16px;
+    };
 `;
 
 export const CastYear = styled.h2`
@@ -124,14 +214,19 @@ export const CastYear = styled.h2`
     margin: 0;
     font-size: 16px;
     color: ${({ theme }) => theme.color.fontSecondary};
+
+    @media (max-width:${({theme}) => theme.breakPoint.smallPhone}px) {
+        font-size: 12px;
+    };
 `;
 
 export const CastGenresWrapper = styled.div`
+    min-height: 80px;
     display: flex;
     flex-wrap: wrap;
+    align-items:flex-start;
     gap: 10px;
     font-size: 12px;
-    align-items: center;
 `;
 
 export const Genre = styled.div`
@@ -139,4 +234,9 @@ export const Genre = styled.div`
     padding: 10px;
     border-radius: 10px;
     color: ${({ theme }) => theme.color.fontSecondary};
+
+    @media (max-width: ${({theme}) => theme.breakPoint.smallPhone}px) {
+        padding: 8px;
+        font-size: 12px;
+    }
 `;
