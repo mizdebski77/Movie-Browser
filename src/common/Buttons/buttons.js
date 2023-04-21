@@ -29,7 +29,7 @@ export const Buttons = () => {
                 top: 0,
                 behavior: 'smooth',
             })}>
-                <Arrows  change = "true" src={upArrow}/> <Span >Scroll to top</Span>
+                <Arrows up = "true" src={upArrow}/> <Span >Scroll to top</Span>
             </Button>
         </Wrapper >
     );

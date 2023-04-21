@@ -9,6 +9,7 @@ export const Wrapper = styled.div`
     justify-content: center;
     align-items: center;
     width: 100%;
+    min-height: 29vh;
 `;
 
 export const Title = styled.h1`
@@ -24,4 +25,11 @@ export const Title = styled.h1`
 
 export const Image = styled(SVG)`
     margin: 0 auto ;
+    width: 150px;
+    height: 150px;
+
+    @media (max-width: ${({ theme }) => theme.breakPoint.mobileMax}px) {
+        width: 100px;
+        height: 100px;    
+    }
 `;

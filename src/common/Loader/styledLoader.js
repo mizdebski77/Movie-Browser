@@ -8,6 +8,7 @@ export const Wrapper = styled.section`
     justify-content: center;
     align-items: center;
     width: 100%;
+    min-height: 29vh;
 `;
 
 export const Title = styled.h1`
@@ -25,6 +26,14 @@ export const Spinner = styled(SVG)`
     margin: 0 auto ;
     stroke: ${({ theme }) => theme.color.secondColor};
     animation: spinner 1.5s linear infinite;
+    width: 160px;
+    height: 160px;
+
+    @media (max-width: ${({ theme }) => theme.breakPoint.mobileMax}px) {
+        width: 100px;
+        height: 100px;    
+    }
+
     @keyframes spinner {
         0% {
         transform: rotate(0deg);

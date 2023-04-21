@@ -5,7 +5,6 @@ import { Link } from "react-router-dom";
 export const Wrapper = styled.section`
     max-width: 1300px;
     margin: 0 auto;
-    min-height: 100vh;
     padding: 10px;
 `;
 
