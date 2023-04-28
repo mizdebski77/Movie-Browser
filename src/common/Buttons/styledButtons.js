@@ -35,7 +35,7 @@ export const Button = styled.button`
     }
     
     &:disabled {
-        filter: opacity(0.7);
+        filter: opacity(0.5);
         background: ${({ theme }) => theme.color.fontPrimary};
         cursor: no-drop;
         transform: none;
