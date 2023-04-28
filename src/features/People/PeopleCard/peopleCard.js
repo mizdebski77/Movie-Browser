@@ -7,6 +7,7 @@ import { Error } from '../../../common/Error/error';
 import { CardImage, Name, PersonCard, Wrapper } from './styledPeopleCard';
 import { selectPage } from '../../Movies/MovieCard/FetchPopularMovies/moviesSlice';
 import { IMAGE_BASE_URL } from '../../../core/apiData';
+import noPhoto from '../../../common/Images/noPhoto.svg';
 
 export const PeopleCard = () => {
     const dispatch = useDispatch();
@@ -26,7 +27,7 @@ export const PeopleCard = () => {
                 <Wrapper>
                     {people.map((person) => (
                         <PersonCard to={`/profile/${person.id}`} key={person.id} onClick={() => window.scrollTo(0, 0)}>
-                            <CardImage src={`${IMAGE_BASE_URL}${person.profile_path}`} />
+                            <CardImage src={person.profile_path ? `${IMAGE_BASE_URL}${person.profile_path}` : noPhoto} />
                             <Name>{person.name}</Name>
                         </PersonCard>
                     ))};

@@ -9,7 +9,7 @@ export const Wrapper = styled.main`
     gap: 24px;
     padding: 10px;
     margin-bottom: 32px;
-
+    
     @media (max-width:${({theme}) => theme.breakPoint.firstBreakPoint}px) {
         grid-template-columns: repeat(3, 1fr);
         gap: 16px;

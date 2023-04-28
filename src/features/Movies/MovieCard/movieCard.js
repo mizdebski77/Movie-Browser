@@ -8,6 +8,7 @@ import { Loader } from '../../../common/Loader/loader';
 import { Error } from '../../../common/Error/error';
 import { fetchGenre, selectGenre } from './FetchGenres/genreSlice';
 import { IMAGE_BASE_URL } from '../../../core/apiData';
+import noPhoto from '../../../common/Images/noPhoto.svg';
 
 export const MovieCard = () => {
     const dispatch = useDispatch();
@@ -23,6 +24,7 @@ export const MovieCard = () => {
 
 
 
+
     const getGenreName = (genreId) => {
         const genre = genres.find((genre) => genre.id === genreId);
         return genre ? genre.name : "";
@@ -33,7 +35,7 @@ export const MovieCard = () => {
             <Wrapper>
                 {movies.map((movie) => (
                     <MovieCardWrapper to={`/movies/${movie.id}`} onClick={() => window.scrollTo(0, 0)} key={movie.id}>
-                        <CardImage src={`${IMAGE_BASE_URL}${movie.poster_path}`} />
+                        <CardImage src={movie.poster_path ? `${IMAGE_BASE_URL}${movie.poster_path}` : noPhoto} />
                         <Informations>
 
                             <MovieTitle>{movie.original_title}</MovieTitle>
