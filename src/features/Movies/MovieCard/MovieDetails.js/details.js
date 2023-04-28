@@ -34,6 +34,7 @@ import { fetchGenre } from '../FetchGenres/genreSlice';
 import { fetchCredits, selectCast } from './FetchCredits/creditsSlice';
 import { IMAGE_BASE_URL } from '../../../../core/apiData';
 import { fetchMovieDetails, selectDetailsState, selectMovieDetails } from './FetchMovieDetails/movieDetailsSlice';
+import { CardsIMAGE_BASE_URL } from '../../../../core/apiData';
 
 export const Details = () => {
     const dispatch = useDispatch();
@@ -94,7 +95,7 @@ export const Details = () => {
                         <CastWrapper>
                             {credits && credits.map((cast) => (
                                 <CastCard to={`/profile/${cast.id}`} key={cast.id} onClick={() => window.scrollTo(0, 0)}>
-                                    <CastImage src={`${IMAGE_BASE_URL}${cast.profile_path ?? poster}`} />
+                                    <CastImage src={`${CardsIMAGE_BASE_URL}${cast.profile_path ?? poster}`} />
                                     <CastCharacter>  {cast.character}</CastCharacter>
                                     <CastName>{cast.name}</CastName>
                                 </CastCard>

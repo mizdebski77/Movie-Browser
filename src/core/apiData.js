@@ -8,4 +8,6 @@ export const movieCreditsURL = "https://api.themoviedb.org/3/movie/";
 export const personCreditsURL = "https://api.themoviedb.org/3/person/";
 export const apiLanguage = "&language=en";
 export const IMAGE_BASE_URL = 'https://image.tmdb.org/t/p/original';
+export const CardsIMAGE_BASE_URL = 'https://image.tmdb.org/t/p/w500';
+
 

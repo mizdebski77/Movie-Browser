@@ -7,7 +7,7 @@ import { useEffect } from 'react';
 import { Loader } from '../../../common/Loader/loader';
 import { Error } from '../../../common/Error/error';
 import { fetchGenre, selectGenre } from './FetchGenres/genreSlice';
-import { IMAGE_BASE_URL } from '../../../core/apiData';
+import { CardsIMAGE_BASE_URL } from '../../../core/apiData';
 import noPhoto from '../../../common/Images/noPhoto.svg';
 
 export const MovieCard = () => {
@@ -35,7 +35,7 @@ export const MovieCard = () => {
             <Wrapper>
                 {movies.map((movie) => (
                     <MovieCardWrapper to={`/movies/${movie.id}`} onClick={() => window.scrollTo(0, 0)} key={movie.id}>
-                        <CardImage src={movie.poster_path ? `${IMAGE_BASE_URL}${movie.poster_path}` : noPhoto} />
+                        <CardImage src={movie.poster_path ? `${CardsIMAGE_BASE_URL}${movie.poster_path}` : noPhoto} />
                         <Informations>
 
                             <MovieTitle>{movie.original_title}</MovieTitle>
