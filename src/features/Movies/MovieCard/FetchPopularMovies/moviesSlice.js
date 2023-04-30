@@ -7,6 +7,7 @@ const moviesSlice = createSlice({
         page: 1,
         movies: [],
         query: null,
+        totalResults: 0,
     },
 
     reducers: {
@@ -17,6 +18,7 @@ const moviesSlice = createSlice({
         fetchMoviesSuccess: (state, { payload: movies }) => {
             state.status = "success";
             state.movies = movies;
+            
         },
 
         fetchMoviesError: (state) => {
