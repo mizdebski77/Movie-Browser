@@ -17,7 +17,5 @@ html {
     text-decoration: none;
     background: ${({ theme }) => theme.color.mainColor};
     color: ${({ theme }) => theme.color.fontPrimary};
-    min-height: 100vh;
-
     }
   `;

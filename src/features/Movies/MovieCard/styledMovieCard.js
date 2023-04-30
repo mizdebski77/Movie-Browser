@@ -96,7 +96,6 @@ export const MovieYear = styled.div`
 `;
 
 export const GenreWrapper = styled.div`
-    min-height: 80px;
     display: flex;
     flex-wrap: wrap;
     align-items:flex-start;

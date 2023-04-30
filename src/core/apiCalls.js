@@ -40,5 +40,12 @@ export const GetPeopleDetails = async (id) => {
 
 export const GetPeopleCredits = async (id) => {
     return makeApiCall(`${personCreditsURL}/${id}/credits?api_key=${apiKey}&language=${apiLanguage}`);
-}
+};
+
+export const GetPeopleByQuery = async (query, currentPage) => {
+    if (!query) {
+        return
+    }
+    return makeApiCall(`${searchMovieURL}?api_key=${apiKey}&page=${currentPage}&query=${query}`);
+};
 

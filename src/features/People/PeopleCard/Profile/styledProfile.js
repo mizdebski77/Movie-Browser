@@ -220,7 +220,6 @@ export const CastYear = styled.h2`
 `;
 
 export const CastGenresWrapper = styled.div`
-    min-height: 80px;
     display: flex;
     flex-wrap: wrap;
     align-items:flex-start;

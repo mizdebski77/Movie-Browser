@@ -2,14 +2,14 @@ import styled from "styled-components";
 import SVG from "react-inlinesvg";
 
 export const Wrapper = styled.div`
-    margin: 25% 0 25% 0 ;
-    color: white;
-    display: grid;
+    display: flex;
+    margin-top: 10%;
+    flex-direction: column;
     gap: 20px;
-    justify-content: center;
+    justify-content: start;
     align-items: center;
     width: 100%;
-    min-height: 29vh;
+    min-height: 100vh;
 `;
 
 export const Title = styled.h1`
@@ -19,7 +19,7 @@ export const Title = styled.h1`
     color: black;
 
     @media (max-width: ${({ theme }) => theme.breakPoint.mobileMax}px) {
-        font-size: 24px;
+        font-size: 20px;
     }
 `;
 
