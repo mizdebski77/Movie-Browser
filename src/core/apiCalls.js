@@ -7,8 +7,8 @@ const makeApiCall = async (url) => {
     return await response.data;
 };
 
-export const GetPopularMovies = async (currentPage) => {
-    return makeApiCall(`${moviesURL}?api_key=${apiKey}&page=${currentPage}&language=${apiLanguage}`);
+export const GetPopularMovies = async (page) => {
+    return makeApiCall(`${moviesURL}?api_key=${apiKey}&page=${page}&language=${apiLanguage}`);
 };
 
 export const GetMovieDetails = async (id) => {
