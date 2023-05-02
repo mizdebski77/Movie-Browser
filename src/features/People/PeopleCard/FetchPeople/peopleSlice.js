@@ -5,6 +5,7 @@ const peopleSlice = createSlice({
     initialState: {
         status: "loading",
         people: [],
+        page: 1,
     },
 
     reducers: {
@@ -17,26 +18,24 @@ const peopleSlice = createSlice({
             state.people = people;
         },
 
+        setPage: (state, { payload: page }) => {
+            state.page = page;
+        },
+
         fetchPeopleError: (state) => {
             state.status = "error";
         },
     }
 });
 
-export const { fetchPeople, fetchPeopleSuccess, fetchPeopleError } = peopleSlice.actions;
+export const { setPage, fetchPeople, fetchPeopleSuccess, fetchPeopleError } = peopleSlice.actions;
 export const selecPeopleState = state => state.people;
 
 export const selectPeople = state => selecPeopleState(state).people.results;
 export const selectStatus = state => selecPeopleState(state).status;
-export const xd = state => selecPeopleState(state).people;
+export const selectPage = state => selecPeopleState(state).page;
 
 
-export const getProfileByID = (state, personID) => {
-    const people = selectPeople(state);
-    if (people && people.length > 0) {
-        return people.find(person => person.id === parseInt(personID));
-    }
-    return undefined;
-};
+
 
 export default peopleSlice.reducer;

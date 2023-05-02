@@ -16,18 +16,3 @@ export const Title = styled.h1`
     }
 `;
 
-export const ImageContainer = styled.div`
-    max-width: 1000px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: center;
-`;
-
-export const NotFoundImage = styled.img`
-    width: 300px;
-    margin-top: 10%;
-
-    @media (max-width: ${({ theme }) => theme.breakPoint.mobileMax}px) {
-        width: 180px;
-    }
-`;
