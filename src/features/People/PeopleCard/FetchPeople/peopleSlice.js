@@ -34,6 +34,7 @@ export const selecPeopleState = state => state.people;
 export const selectPeople = state => selecPeopleState(state).people.results;
 export const selectStatus = state => selecPeopleState(state).status;
 export const selectPage = state => selecPeopleState(state).page;
+export const selectTotalPages = state => selecPeopleState(state).people.total_pages;
 
 
 
