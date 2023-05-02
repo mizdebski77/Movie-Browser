@@ -33,6 +33,7 @@ import star from '../../../../common/Images/star.svg'
 import { fetchGenre } from '../FetchGenres/genreSlice';
 import { fetchCredits, selectCast } from './FetchCredits/creditsSlice';
 import { IMAGE_BASE_URL } from '../../../../core/apiData';
+import noPhoto from '../../../../common/Images/noPhoto.svg';
 import { fetchMovieDetails, selectDetailsState, selectMovieDetails } from './FetchMovieDetails/movieDetailsSlice';
 import { CardsIMAGE_BASE_URL } from '../../../../core/apiData';
 
@@ -44,7 +45,7 @@ export const Details = () => {
     const movie = useSelector(selectMovieDetails);
     const credits = useSelector(selectCast);
     const backDrop = `${IMAGE_BASE_URL}${movie.backdrop_path}`;
-    const poster = `${IMAGE_BASE_URL}${movie.poster_path}`
+    const poster = movie.poster_path ? `${IMAGE_BASE_URL}${movie.poster_path}` : noPhoto;
 
 
     useEffect(() => {

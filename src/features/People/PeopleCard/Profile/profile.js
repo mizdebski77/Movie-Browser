@@ -11,6 +11,7 @@ import { fetchGenre, selectGenre } from '../../../Movies/MovieCard/FetchGenres/g
 import { IMAGE_BASE_URL } from '../../../../core/apiData';
 import { Informations } from '../../../Movies/MovieCard/styledMovieCard';
 import { CardsIMAGE_BASE_URL } from '../../../../core/apiData';
+import noPhoto from '../../../../common/Images/noPhoto.svg';
 
 
 export const Profile = () => {
@@ -18,7 +19,7 @@ export const Profile = () => {
     const { id } = useParams();
     const status = useSelector(selectProfileStatus);
     const profile = useSelector(selectProfile);
-    const poster = `${IMAGE_BASE_URL}${profile.profile_path}`;
+    const poster = profile.profile_path ? `${IMAGE_BASE_URL}${profile.profile_path}` : noPhoto ;
     const cast = useSelector(selectCast)
     const genres = useSelector(selectGenre);
 
@@ -63,7 +64,9 @@ export const Profile = () => {
                                 <CastImage src={`${CardsIMAGE_BASE_URL}${movie.poster_path ?? poster}`} />
                                 <Informations>
                                     <CastTitle>{movie.original_title}</CastTitle>
-                                    <CastYear>{new Date(movie.release_date).getFullYear()}</CastYear>
+                                    <CastYear>
+                                        {isNaN(new Date(movie.release_date).getFullYear()) ? "" : new Date(movie.release_date).getFullYear()}
+                                    </CastYear>
                                     <CastGenresWrapper>
                                         {movie.genre_ids.map((castGenre) => (
                                             <Genre key={castGenre}>{getGenreName(castGenre)}</Genre>
