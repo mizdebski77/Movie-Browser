@@ -24,7 +24,7 @@ export const Search = () => {
         } else {
             replaceQueryParameter({
                 key: searchQueryParamName,
-                value: target.value.trim() || undefined,
+                value: target.value.trim() !== "" ? target.value : "",
             });
         };
     };

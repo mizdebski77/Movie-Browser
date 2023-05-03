@@ -1,5 +1,5 @@
 import axios from "axios";
-import { moviesURL, apiKey, apiLanguage, genreURL, movieCreditsURL, peopleURL, peopleDetailsURL, personCreditsURL, moviesDetails, searchMovieURL } from './apiData';
+import { moviesURL, apiKey, apiLanguage, genreURL, movieCreditsURL, peopleURL, peopleDetailsURL, personCreditsURL, moviesDetails, searchMovieURL, searchPeopleURL } from './apiData';
 
 
 const makeApiCall = async (url) => {
@@ -15,11 +15,11 @@ export const GetMovieDetails = async (id) => {
     return makeApiCall(`${moviesDetails}/${id}?api_key=${apiKey}&language=${apiLanguage}`);
 };
 
-export const GetMoviesByQuery = async (query, currentPage) => {
+export const GetMoviesByQuery = async (query, page) => {
     if (!query) {
         return;
     }
-    return makeApiCall(`${searchMovieURL}?api_key=${apiKey}&page=${currentPage}&query=${query}`);
+    return makeApiCall(`${searchMovieURL}?api_key=${apiKey}&page=${page}&query=${query}`);
 };
 
 export const GetGenres = async () => {
@@ -30,8 +30,8 @@ export const GetCredits = async (id) => {
     return makeApiCall(`${movieCreditsURL}/${id}/credits?api_key=${apiKey}&language=${apiLanguage}`);
 };
 
-export const GetPopularPeople = async (currentPage) => {
-    return makeApiCall(`${peopleURL}?api_key=${apiKey}&page=${currentPage}&language=${apiLanguage}`)
+export const GetPopularPeople = async (page) => {
+    return makeApiCall(`${peopleURL}?api_key=${apiKey}&page=${page}&language=${apiLanguage}`)
 };
 
 export const GetPeopleDetails = async (id) => {
@@ -42,10 +42,10 @@ export const GetPeopleCredits = async (id) => {
     return makeApiCall(`${personCreditsURL}/${id}/credits?api_key=${apiKey}&language=${apiLanguage}`);
 };
 
-export const GetPeopleByQuery = async (query, currentPage) => {
+export const GetPeopleByQuery = async (query, page) => {
     if (!query) {
         return
     }
-    return makeApiCall(`${searchMovieURL}?api_key=${apiKey}&page=${currentPage}&query=${query}`);
+    return makeApiCall(`${searchPeopleURL}?api_key=${apiKey}&page=${page}&query=${query}`);
 };
 

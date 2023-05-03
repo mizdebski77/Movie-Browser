@@ -1,23 +1,38 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchPeople, selectPage, selectPeople, selectStatus } from './FetchPeople/peopleSlice';
+import { fetchPeople, selectPeople, selectStatus, setPage, setQuery } from './FetchPeople/peopleSlice';
 import { useEffect } from 'react';
 import { Loader } from '../../../common/Loader/loader';
 import { Error } from '../../../common/Error/error';
 import { CardImage, Name, PersonCard, Wrapper } from './styledPeopleCard';
 import { CardsIMAGE_BASE_URL } from '../../../core/apiData';
 import noPhoto from '../../../common/Images/noPhoto.svg';
+import { searchQueryParamName, useQueryParameter } from '../../../core/queryParameters';
 
 export const PeopleCard = () => {
     const dispatch = useDispatch();
-    const page = useSelector(selectPage);
+    const page = +useQueryParameter("page");
+    const query = useQueryParameter(searchQueryParamName);
     const people = useSelector(selectPeople);
     const status = useSelector(selectStatus);
 
     useEffect(() => {
-        dispatch(fetchPeople(page));
-    }, [dispatch, page]);
+        if (!page) {
+            dispatch(setPage(1))
+        } else {
+            dispatch(setPage(page));
+        }
 
+        if (query !== null) {
+            dispatch(setQuery(query));
+        } else {
+            dispatch(setQuery(null));
+        }
+
+        dispatch(fetchPeople(page, query));
+    }, [dispatch, page, query]);
+
+    console.log(people);
 
 
     return (

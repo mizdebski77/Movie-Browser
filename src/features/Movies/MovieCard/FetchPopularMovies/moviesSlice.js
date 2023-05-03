@@ -18,7 +18,6 @@ const moviesSlice = createSlice({
         fetchMoviesSuccess: (state, { payload: movies }) => {
             state.status = "success";
             state.movies = movies;
-            
         },
 
         fetchMoviesError: (state) => {
