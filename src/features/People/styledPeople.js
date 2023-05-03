@@ -15,3 +15,17 @@ export const Title = styled.h1`
         font-size: 24px;
     }
 `;
+
+export const Container = styled.div`
+    display: grid;
+    gap: 20%;
+`;
+
+export const Image = styled.img`
+    width: 400px;
+    margin: 0 auto;
+
+    @media (max-width:${({theme}) => theme.breakPoint.mobileMax}px) {
+        width: 200px;
+    }
+`;

@@ -18,6 +18,7 @@ export const Search = () => {
     };
 
     const onInputChange = ({ target }) => {
+        
 
         if (location.pathname.split("/")[1] === "/movie/:id".split("/")[1]) {
             navigate({
