@@ -3,24 +3,26 @@ import {  Title, Wrapper } from './styledMovies';
 import { MovieCard } from './MovieCard/movieCard';
 import { Buttons } from '../../common/Buttons/buttons';
 import { useSelector } from 'react-redux';
-import { selectQuery, selectStatus, selectTotalResuults } from './MovieCard/FetchPopularMovies/moviesSlice';
+import {selectQuery, selectStatus, selectTotalPages } from './MovieCard/FetchPopularMovies/moviesSlice';
 
 export const Movies = () => {
     const status = useSelector(selectStatus);
     const query = useSelector(selectQuery);
-    const total_results = useSelector(selectTotalResuults);
+    const totalPages = useSelector(selectTotalPages);
+
 
     return (
         <Wrapper>
-            {total_results > 0 ? (
+            {totalPages > 0 ? (
                 <Title>
-                    {!query ? "Popular Movies" : `Search results for "${query}" ${status === "success" ? `(${total_results})` : ""}`}
+                    {!query ? "Popular Movies" : `Search results for "${query}" ${status === "success" ? `(${totalPages})` : ""}`}
                 </Title>
             ) : (
                 <Title>{!query ? "Popular Movies" : `Sorry, there are no results for  "${query}"`}</Title>
             )}
             <MovieCard />
-            {status === "success" && <Buttons />}
-        </Wrapper>
+            {status === "success" && < Buttons totalPages = {totalPages}/>}
+
+               </Wrapper>
     );
 };

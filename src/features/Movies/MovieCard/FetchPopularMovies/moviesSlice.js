@@ -8,6 +8,7 @@ const moviesSlice = createSlice({
         movies: [],
         query: null,
         totalResults: 0,
+        totalPages: 0,
     },
 
     reducers: {
@@ -18,6 +19,7 @@ const moviesSlice = createSlice({
         fetchMoviesSuccess: (state, { payload: movies }) => {
             state.status = "success";
             state.movies = movies;
+            state.totalPages = movies.total_pages;
         },
 
         fetchMoviesError: (state) => {
@@ -41,7 +43,7 @@ export const selectMoviesState = state => state.movies;
 export const selectMovies = state => selectMoviesState(state).movies.results;
 export const selectStatus = state => selectMoviesState(state).status;
 export const selectQuery = (state) => selectMoviesState(state).query;
-export const selectTotalPages = state => selectMoviesState(state).movies.total_pages;
+export const selectTotalPages = state => selectMoviesState(state).totalPages;
 export const selectPage = state => selectMoviesState(state).page;
 export const selectTotalResuults = state => selectMoviesState(state).movies.total_results
 

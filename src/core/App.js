@@ -14,7 +14,7 @@ function App() {
       <Routes>
         <Route path="/movies" element={<Movies />}></Route>
         <Route path="/people" element={<People />}></Route>
-        <Route path="/movies/:id" element={<Details />}></Route>
+        <Route path="/movie/:id" element={<Details />}></Route>
         <Route path="/profile/:id" element={<Profile />}></Route>
         <Route path={"*"} element={<Navigate replace to="/movies" />}> </Route>
       </Routes >

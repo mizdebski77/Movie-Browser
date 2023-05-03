@@ -5,19 +5,15 @@ import leftArrow from '../Images/leftArrow.svg'
 import upArrow from '../Images/upArrow.svg'
 import doubleLeft from '../Images/doubleLeft.svg'
 import doubleRight from '../Images/doubleRight.svg'
+import { useQueryParameter, useReplaceQueryParameter } from '../../core/queryParameters';
 
-import { useSelector } from 'react-redux';
-import { selectPage, selectTotalPages } from '../../features/Movies/MovieCard/FetchPopularMovies/moviesSlice';
-import { useReplaceQueryParameter } from '../../core/queryParameters';
+export const Buttons = ({totalPages}) => {
 
-export const Buttons = () => {
+    const queryparam = +useQueryParameter("page");
+    const page = queryparam ? queryparam : 1;
 
-
-    const pagesNumber = useSelector(selectTotalPages);
-    const page = useSelector(selectPage);
-    const lastPageNumber = pagesNumber > 500 ? 500 : pagesNumber;
-
-
+    const lastPageNumber = totalPages > 500 ? 500 : totalPages;
+    
 
     const replaceQueryParameter = useReplaceQueryParameter();
     const setPage = (page) => {

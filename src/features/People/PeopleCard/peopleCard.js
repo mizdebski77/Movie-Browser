@@ -32,7 +32,6 @@ export const PeopleCard = () => {
         dispatch(fetchPeople(page, query));
     }, [dispatch, page, query]);
 
-    console.log(people);
 
 
     return (

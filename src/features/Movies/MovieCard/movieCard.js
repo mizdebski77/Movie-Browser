@@ -30,7 +30,7 @@ export const MovieCard = () => {
         } else {
             dispatch(setQuery(null));
         }
-
+        
         dispatch(fetchMovies(page, query));
         dispatch(fetchGenre());
     }, [dispatch, page, query]);
@@ -44,7 +44,7 @@ export const MovieCard = () => {
         {status === "loading" ? <Loader /> : status === "error" ? <Error /> :
             <Wrapper>
                 {movies.map((movie) => (
-                    <MovieCardWrapper to={`/movies/${movie.id}`} onClick={() => window.scrollTo(0, 0)} key={movie.id}>
+                    <MovieCardWrapper to={`/movie/${movie.id}`} onClick={() => window.scrollTo(0, 0)} key={movie.id}>
                         <CardImage src={movie.poster_path ? `${CardsIMAGE_BASE_URL}${movie.poster_path}` : noPhoto} />
                         <Informations>
                             <MovieTitle>{movie.original_title}</MovieTitle>

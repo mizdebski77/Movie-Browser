@@ -10,29 +10,35 @@ export const Search = () => {
     const query = useQueryParameter(searchQueryParamName);
     const replaceQueryParameter = useReplaceQueryParameter();
     const navigate = useNavigate();
-
-
+    const setPage = (page) => {
+        replaceQueryParameter({
+            key: "page",
+            value: page,
+        });
+    };
 
     const onInputChange = ({ target }) => {
 
-        if (location.pathname.startsWith("/movies/") && location.pathname.split("/").length === 3) {
+        if (location.pathname.split("/")[1] === "/movie/:id".split("/")[1]) {
             navigate({
                 pathname: "/movies",
                 search: createSearchParams({ [searchQueryParamName]: target.value }).toString()
             });
 
+        } else if (location.pathname.split("/")[1] === "/profile/:id".split("/")[1]) {
+            navigate({
+                pathname: "/people",
+                search: createSearchParams({ [searchQueryParamName]: target.value }).toString()
+            });
+
         } else {
+            setPage(1); 
             replaceQueryParameter({
                 key: searchQueryParamName,
                 value: target.value.trim() !== "" ? target.value : "",
             });
         };
     };
-
-
-
-
-
 
     return (
         <Wrapper>

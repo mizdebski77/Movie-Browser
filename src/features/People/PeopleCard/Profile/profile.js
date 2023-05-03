@@ -60,7 +60,7 @@ export const Profile = () => {
 
                     <CastWrapper>
                         {cast && cast.map((movie) => (
-                            <CastCard onClick={() => window.scrollTo(0, 0)} key={movie.id} to={`/movies/${movie.id}`}>
+                            <CastCard onClick={() => window.scrollTo(0, 0)} key={movie.id} to={`/movie/${movie.id}`}>
                                 <CastImage src={`${CardsIMAGE_BASE_URL}${movie.poster_path ?? poster}`} />
                                 <Informations>
                                     <CastTitle>{movie.original_title}</CastTitle>
