@@ -9,7 +9,6 @@ function* fetchPeopleHandler(action) {
         yield put(fetchPeopleSuccess(people));
     } catch (error) {
         yield put(fetchPeopleError(error));
-        yield call(console.error);
     }
 }
 

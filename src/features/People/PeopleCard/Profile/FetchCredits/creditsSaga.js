@@ -9,7 +9,6 @@ function* fetchPersonCreditsHandler(action) {
         yield put(fetchPersonCreditsSuccess(credits));
     } catch (error) {
         yield put(fetchPersonCreditsError(error));
-        yield call(console.error);
     }
 }
 

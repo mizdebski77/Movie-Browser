@@ -8,7 +8,6 @@ function* fetchCreditsHandler(action) {
         yield put(fetchCreditsSuccess(credits));
     } catch (error) {
         yield put(fetchCreditsError(error));
-        yield call(console.error);
     }
 }
 

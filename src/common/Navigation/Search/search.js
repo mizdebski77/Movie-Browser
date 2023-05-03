@@ -11,26 +11,27 @@ export const Search = () => {
     const replaceQueryParameter = useReplaceQueryParameter();
     const navigate = useNavigate();
 
+
+
     const onInputChange = ({ target }) => {
 
-        localStorage.setItem("movie", query);
-
-        const toMovies = "/movies";
-        const toMovie = "/movies/:id";
-
-        if (location.pathname.split("/")[1] === toMovie.split("/")[1]) {
+        if (location.pathname.startsWith("/movies/") && location.pathname.split("/").length === 3) {
             navigate({
-                pathname: toMovies,
+                pathname: "/movies",
                 search: createSearchParams({ [searchQueryParamName]: target.value }).toString()
             });
 
         } else {
             replaceQueryParameter({
                 key: searchQueryParamName,
-                value: target.value.trim() !== "" ? target.value : "",
+                value: target.value.trim() || undefined,
             });
         };
     };
+
+
+
+
 
 
     return (

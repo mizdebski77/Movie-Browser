@@ -16,7 +16,6 @@ function* fetchMoviesHandler() {
         
     } catch (error) {
         yield put(fetchMoviesError(error));
-        yield call(console.error);
     }
 }
 

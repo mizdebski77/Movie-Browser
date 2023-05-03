@@ -2,7 +2,7 @@ import React from 'react';
 import { CardImage, Genre, GenreWrapper, MovieCardWrapper, MovieTitle, MovieYear, Raiting, Informations, Star, Wrapper } from './styledMovieCard';
 import star from '../../../common/Images/star.svg';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchMovies, selectMovies, selectPage, selectStatus, setQuery } from './FetchPopularMovies/moviesSlice';
+import { fetchMovies, selectMovies, selectStatus, setPage, setQuery } from './FetchPopularMovies/moviesSlice';
 import { useEffect } from 'react';
 import { Loader } from '../../../common/Loader/loader';
 import { Error } from '../../../common/Error/error';
@@ -16,11 +16,15 @@ export const MovieCard = () => {
     const movies = useSelector(selectMovies);
     const genres = useSelector(selectGenre);
     const status = useSelector(selectStatus);
-    const page = useSelector(selectPage);
+    const page = +useQueryParameter("page");
     const query = useQueryParameter(searchQueryParamName);
 
-
     useEffect(() => {
+        if (!page) {
+            dispatch(setPage(1))
+        } else {
+            dispatch(setPage(page));
+        }
         if (query !== null) {
             dispatch(setQuery(query));
         } else {
