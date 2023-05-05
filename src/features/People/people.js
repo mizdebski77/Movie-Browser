@@ -15,15 +15,15 @@ export const People = () => {
     return (
 
         <Wrapper>
-            {totalResults > 0 ? (
-                <Title>
-                    {!query ? "Popular People" : `Search results for "${query}" ${status === "success" ? `(${totalResults})` : ""}`}
-                </Title>
-            ) : (
+            {totalResults === 0 && status === "success" ? (
                 <Container>
-                    <Title>{status === "loading" ? `Search results for "${query}"` : `Sorry, there are no results for  "${query}"`}</Title>
-                    {status === "success" && <Image src={noResults} />}
+                    <Title>Sorry, there are no results for  "{query}"</Title>
+                    {status === "success" && totalResults === 0 && <Image src={noResults} />}
                 </Container>
+            ) : (
+                <Title>
+                    {!query ? "Popular Movies" : `Search results for "${query}" ${status === "success" ? `(${totalResults})` : ""}`}
+                </Title>
             )};
             <PeopleCard />
             {status === "success" && totalResults > 0 && < Buttons totalPages={totalPages} />}

@@ -14,16 +14,16 @@ export const Movies = () => {
 
     return (
         <Wrapper>
-            {totalResults > 0 ? (
+            {totalResults === 0 && status === "success" ? (
+                <Container>
+                    <Title>Sorry, there are no results for  "{query}"</Title>
+                    {status === "success" && totalResults === 0 && <Image src={noResults} />}
+                </Container>
+            ) : (
                 <Title>
                     {!query ? "Popular Movies" : `Search results for "${query}" ${status === "success" ? `(${totalResults})` : ""}`}
                 </Title>
-            ) : (
-                <Container>
-                    <Title>{status === "loading" ? `Search results for "${query}"` :  `Sorry, there are no results for  "${query}"`}</Title>
-                    {status === "success" && <Image src={noResults} />}
-                </Container>
-            )};
+            )}
             <MovieCard />
             {status === "success" && totalResults > 0 && < Buttons totalPages={totalPages} />}
         </Wrapper>
