@@ -57,6 +57,7 @@ export const Informations = styled.div`
 
     @media (max-width:${({theme}) => theme.breakPoint.smallPhone}px) {
         gap: 12px;
+        width: 100%;
     };
 `;
 
