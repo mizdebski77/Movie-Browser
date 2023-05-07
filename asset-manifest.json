@@ -1,20 +1,23 @@
 {
   "files": {
-    "main.js": "/Movie-Browser/static/js/main.36f5081f.js",
+    "main.js": "/Movie-Browser/static/js/main.04cf1bfb.js",
+    "static/media/no-results.png": "/Movie-Browser/static/media/no-results.41ade0ad50c52a37aa05.png",
     "static/media/star.svg": "/Movie-Browser/static/media/star.0205447aa83d742a2da2532a6d097688.svg",
     "index.html": "/Movie-Browser/index.html",
     "static/media/camera.svg": "/Movie-Browser/static/media/camera.8894d10b6d6f3746cc0e0d6d6206bd35.svg",
-    "static/media/error.svg": "/Movie-Browser/static/media/error.327818b8dd54848171244fc97b4ab4d5.svg",
+    "static/media/noPhoto small.svg": "/Movie-Browser/static/media/noPhoto small.ddc47d692e267e6ee8e94dfcbf46f98c.svg",
+    "static/media/noPhoto.svg": "/Movie-Browser/static/media/noPhoto.2dd2f6e9ce06e55623128c738cf494d3.svg",
+    "static/media/error.svg": "/Movie-Browser/static/media/error.61aadec832bf78feb9fc7439f427ee58.svg",
     "static/media/search.svg": "/Movie-Browser/static/media/search.ed3f24f20cda9bb4e005406a3f864acb.svg",
-    "static/media/spinner.svg": "/Movie-Browser/static/media/spinner.de3ed3f7426184029d80698bd19f2ca1.svg",
     "static/media/doubleLeft.svg": "/Movie-Browser/static/media/doubleLeft.f965eb5d7eab83a335b4db6901a18c73.svg",
+    "static/media/spinner.svg": "/Movie-Browser/static/media/spinner.173f0f8ea13abd443fb99755e4b46168.svg",
     "static/media/upArrow.svg": "/Movie-Browser/static/media/upArrow.334b8028367702d7c787bb0572e798b8.svg",
     "static/media/doubleRight.svg": "/Movie-Browser/static/media/doubleRight.6aebcc4303d3f283543f52a061d10b12.svg",
     "static/media/rightArrow.svg": "/Movie-Browser/static/media/rightArrow.0a60928787e768c9bc7fe97951c32e6c.svg",
     "static/media/leftArrow.svg": "/Movie-Browser/static/media/leftArrow.19e5f81ff87effda5f0a1a0b7e75f72a.svg",
-    "main.36f5081f.js.map": "/Movie-Browser/static/js/main.36f5081f.js.map"
+    "main.04cf1bfb.js.map": "/Movie-Browser/static/js/main.04cf1bfb.js.map"
   },
   "entrypoints": [
-    "static/js/main.36f5081f.js"
+    "static/js/main.04cf1bfb.js"
   ]
 }
