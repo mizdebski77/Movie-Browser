@@ -34,6 +34,8 @@ import { fetchGenre } from '../FetchGenres/genreSlice';
 import { fetchCredits, selectCast } from './FetchCredits/creditsSlice';
 import { IMAGE_BASE_URL } from '../../../../core/apiData';
 import noPhoto from '../../../../common/Images/noPhoto.svg';
+import smallnoPhoto from '../../../../common/Images/noPhoto small.svg';
+
 import { fetchMovieDetails, selectDetailsState, selectMovieDetails } from './FetchMovieDetails/movieDetailsSlice';
 import { CardsIMAGE_BASE_URL } from '../../../../core/apiData';
 
@@ -45,7 +47,7 @@ export const Details = () => {
     const movie = useSelector(selectMovieDetails);
     const credits = useSelector(selectCast);
     const backDrop = `${IMAGE_BASE_URL}${movie.backdrop_path}`;
-    const poster = movie.poster_path ? `${IMAGE_BASE_URL}${movie.poster_path}` : noPhoto;
+    const poster = movie.poster_path ? `${IMAGE_BASE_URL}${movie.poster_path}` :  noPhoto;
 
 
     useEffect(() => {
@@ -96,7 +98,7 @@ export const Details = () => {
                         <CastWrapper>
                             {credits && credits.map((cast) => (
                                 <CastCard to={`/profile/${cast.id}`} key={cast.id} onClick={() => window.scrollTo(0, 0)}>
-                                    <CastImage src={`${CardsIMAGE_BASE_URL}${cast.profile_path ?? poster}`} />
+                                    <CastImage src={cast.profile_path ? `${CardsIMAGE_BASE_URL}${cast.profile_path }` : smallnoPhoto    } />
                                     <CastCharacter>  {cast.character}</CastCharacter>
                                     <CastName>{cast.name}</CastName>
                                 </CastCard>
