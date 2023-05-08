@@ -1,6 +1,6 @@
 # Movies Browser
 
-## See [Demo](https://konradbauer.github.io/movies-browser/)
+## See [Demo](https://mizdebski77.github.io/Movie-Browser/)
 
 The Movies Browser is a platform you can easily search for your favorite movies, popular actors and actresses.
 Also you can find more information about the cast.
