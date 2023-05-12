@@ -4,7 +4,7 @@
 
 The Movies Browser is a platform you can easily search for your favorite movies, popular actors and actresses.
 Also you can find more information about the cast.
-Here below you can find example
+
 
 ## Technologies
 [![Our Skills](https://skillicons.dev/icons?i=html,js,css,react,redux,git,github,vscode)](https://skillicons.dev)
