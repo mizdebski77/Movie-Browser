@@ -22,7 +22,7 @@ export const People = () => {
                 </Container>
             ) : (
                 <Title>
-                    {!query ? "Popular Movies" : `Search results for "${query}" ${status === "success" ? `(${totalResults})` : ""}`}
+                    {!query ? "Popular People" : `Search results for "${query}" ${status === "success" ? `(${totalResults})` : ""}`}
                 </Title>
             )};
             <PeopleCard />

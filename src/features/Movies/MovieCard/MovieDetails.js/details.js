@@ -62,7 +62,7 @@ export const Details = () => {
             {status === "loading" ? <Loader /> : status === "error" ? <Error /> :
                 <Wrapper>
 
-                    <TitleWrapper backDrop={backDrop}>
+                    <TitleWrapper>
                         <ImageWrapper backDrop={backDrop}>
                             <Title>{movie.title}</Title>
                             <RaitingWrapper><Star src={star} />{movie.vote_average.toFixed(1)}</RaitingWrapper>
